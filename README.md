@@ -24,3 +24,13 @@ $ ionic cordova run ios
 
 Substitute ios for android if not on a Mac.
 
+## sandwich.jks 
+Password is $87hROza, 
+
+```bash
+keytool -exportcert -list -v -alias androiddebugkey -keystore  c:/users/lenovo/.android/debug.keystore
+keytool -exportcert -list -v -alias sandwich -keystore  sandwich.jks
+```
+
+## integrating google signin
+https://javebratt.com/ionic-google-login/ 

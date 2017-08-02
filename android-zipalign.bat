@@ -1,0 +1,1 @@
+zipalign -v -p 4 ./platforms/android/build/outputs/apk/android-release-unsigned.apk ./platforms/android/build/outputs/apk/unsigned.apk

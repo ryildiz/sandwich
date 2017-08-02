@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 
 import { KaydolPage } from '../pages/kaydol/kaydol';
+import { LoginPage } from '../pages/login/login';
 
 
 
@@ -14,7 +15,7 @@ import { KaydolPage } from '../pages/kaydol/kaydol';
 })
 export class MyApp {
   
-    rootPage:any = KaydolPage;
+    rootPage:any = LoginPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

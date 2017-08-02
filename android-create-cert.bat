@@ -1,0 +1,1 @@
+keytool -genkey -v -keystore sandwich.jks -keyalg RSA -keysize 2048 -validity 10000 -alias sandwich
