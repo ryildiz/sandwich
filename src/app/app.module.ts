@@ -10,11 +10,13 @@ import {LoginPage} from "../pages/login/login";
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {GooglePlus} from '@ionic-native/google-plus';
+import {MySandwichesPage} from "../pages/mysandwich/mysandwiches";
 
 @NgModule({
     declarations: [
         MyApp,
         SandwichPage,
+        MySandwichesPage,
         KaydolPage,
         LoginPage
     ],
@@ -26,6 +28,7 @@ import {GooglePlus} from '@ionic-native/google-plus';
     entryComponents: [
         MyApp,
         SandwichPage,
+        MySandwichesPage,
         KaydolPage,
         LoginPage
     ],

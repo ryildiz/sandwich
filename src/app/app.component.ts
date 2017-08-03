@@ -3,10 +3,8 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-
-
-import { KaydolPage } from '../pages/kaydol/kaydol';
-import { LoginPage } from '../pages/login/login';
+import {SandwichPage} from "../pages/sandwich/sandwich";
+import {MySandwichesPage} from "../pages/mysandwich/mysandwiches";
 
 
 
@@ -15,7 +13,8 @@ import { LoginPage } from '../pages/login/login';
 })
 export class MyApp {
   
-    rootPage:any = LoginPage;
+    // rootPage:any = LoginPage;
+    rootPage:any = MySandwichesPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
