@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import {SandwichPage} from "../pages/sandwich/sandwich";
 import {MySandwichesPage} from "../pages/mysandwich/mysandwiches";
+import {CreateSandwichPage} from "../pages/createsandwich/createsandwich";
 
 
 
@@ -14,7 +15,8 @@ import {MySandwichesPage} from "../pages/mysandwich/mysandwiches";
 export class MyApp {
   
     // rootPage:any = LoginPage;
-    rootPage:any = MySandwichesPage;
+    // rootPage:any = MySandwichesPage;
+    rootPage:any = CreateSandwichPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

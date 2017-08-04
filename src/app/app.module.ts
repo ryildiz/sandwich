@@ -1,9 +1,7 @@
-import {NgModule, ErrorHandler} from '@angular/core';
+import {ErrorHandler, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
+import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import {MyApp} from './app.component';
-import {SandwichPage} from '../pages/sandwich/sandwich';
-import {KaydolPage} from '../pages/kaydol/kaydol';
 import {LoginPage} from "../pages/login/login";
 
 
@@ -11,13 +9,13 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {GooglePlus} from '@ionic-native/google-plus';
 import {MySandwichesPage} from "../pages/mysandwich/mysandwiches";
+import {CreateSandwichPage} from "../pages/createsandwich/createsandwich";
 
 @NgModule({
     declarations: [
         MyApp,
-        SandwichPage,
         MySandwichesPage,
-        KaydolPage,
+        CreateSandwichPage,
         LoginPage
     ],
     imports: [
@@ -27,9 +25,8 @@ import {MySandwichesPage} from "../pages/mysandwich/mysandwiches";
     bootstrap: [IonicApp],
     entryComponents: [
         MyApp,
-        SandwichPage,
         MySandwichesPage,
-        KaydolPage,
+        CreateSandwichPage,
         LoginPage
     ],
     providers: [

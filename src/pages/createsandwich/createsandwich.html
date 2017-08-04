@@ -1,0 +1,129 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Sandviç oluştur</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="cards-bg">
+
+
+  <ion-list>
+
+    <ion-item>
+      <ion-select [(ngModel)]="gaming" interface="popover">
+        <ion-option value="1">1 dilim</ion-option>
+        <ion-option value="2">2 dilim</ion-option>
+        <ion-option value="3">3 dilim</ion-option>
+        <ion-option value="4">4 dilim</ion-option>
+        <ion-option value="5">5 dilim</ion-option>
+        <ion-option value="6">6 dilim</ion-option>
+        <ion-option value="7">7 dilim</ion-option>
+        <ion-option value="8">8 dilim</ion-option>
+        <ion-option value="9">9 dilim</ion-option>
+        <ion-option value="10">10 dilim</ion-option>
+        <ion-option value="11">11 dilim</ion-option>
+        <ion-option value="12">12 dilim</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+
+
+  <ion-card>
+    <ion-card-header>
+      Ekmek seçin
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-list>
+        <ion-item>
+          <ion-label>Boyu</ion-label>
+          <ion-select [(ngModel)]="ekmektipi" interface="popover">
+            <ion-option value="nes">Tam</ion-option>
+            <ion-option value="n64">Yarım</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-label>Tipi</ion-label>
+          <ion-select [(ngModel)]="ekmekboyu" interface="popover">
+            <ion-option value="nes">Tahıllı</ion-option>
+            <ion-option value="n64">Beyaz</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+    </ion-card-content>
+  </ion-card>
+
+
+
+  <ion-card>
+    <ion-card-header>
+      Süsleme
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <div padding>
+        <ion-segment [(ngModel)]="susleme">
+          <ion-segment-button value="kittens">
+            Kekik
+          </ion-segment-button>
+          <ion-segment-button value="puppies">
+            Zeytin yağı
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Yeşillik
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <div padding>
+        <ion-segment [(ngModel)]="yesillik">
+          <ion-segment-button value="kittens">
+            Domates
+          </ion-segment-button>
+          <ion-segment-button value="puppies">
+            Salatalık
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Sos
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <div padding>
+        <ion-segment [(ngModel)]="sos">
+          <ion-segment-button value="kittens">
+            Zeytin ezmesi
+          </ion-segment-button>
+          <ion-segment-button value="puppies">
+            Acuka
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>
