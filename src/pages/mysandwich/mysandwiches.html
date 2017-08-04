@@ -1,80 +1,49 @@
+
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Sandviçlerim
-    </ion-title>
+    <ion-title>Sandviçlerim</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding style="background-color:#F33562;">
 
-  <ion-item *ngIf="loginData">
-    <ion-avatar item-left>
-      <img [src]="loginData.imageUrl">
-    </ion-avatar>
-    <h2>{{ loginData.displayName }}</h2>
-    <h3>{{ loginData.email }}</h3>
-  </ion-item>
+<ion-content class="cards-bg">
 
+  <ion-card>
 
-  <ion-card id="sandwich-card21">
-    <ion-list>
-      <ion-item color="none" id="sandwich-list-item3">
-        <ion-avatar item-left>
-          <img src="assets/img/sandwich.jpg" />
-        </ion-avatar>
-        <h2>
-          Sipariş oluştur
-        </h2>
-      </ion-item>
+    <div>
+      <img src="assets/img/sandwich.jpg"/>
+    </div>
 
-      <form id="sandwich-form1">
-        <ion-item id="sandwich-toggle1">
-          <ion-label>
-            Tam yağlı beyaz peynir
-          </ion-label>
-          <ion-toggle color="positive" checked="false"></ion-toggle>
-        </ion-item>
-        <ion-item id="sandwich-toggle2">
-          <ion-label>
-            Taze kaşar
-          </ion-label>
-          <ion-toggle color="positive" checked="false"></ion-toggle>
-        </ion-item>
-        <ion-item id="sandwich-toggle3">
-          <ion-label>
-            Salam
-          </ion-label>
-          <ion-toggle color="positive" checked="false"></ion-toggle>
-        </ion-item>
-        <ion-item id="sandwich-toggle4">
-          <ion-label>
-            Kıvırcık
-          </ion-label>
-          <ion-toggle color="positive" checked="false"></ion-toggle>
-        </ion-item>
-        <ion-item id="sandwich-toggle5">
-          <ion-label>
-            Dilim domates
-          </ion-label>
-          <ion-toggle color="positive" checked="false"></ion-toggle>
-        </ion-item>
-        <ion-item id="sandwich-toggle6">
-          <ion-label>
-            Halka kırmızı biber
-          </ion-label>
-          <ion-toggle color="positive" checked="false"></ion-toggle>
-        </ion-item>
-        <ion-item id="sandwich-toggle7">
-          <ion-label>
-            Mayonez
-          </ion-label>
-          <ion-toggle color="positive" checked="false"></ion-toggle>
-        </ion-item>
-      </form>
-    </ion-list>
+    <ion-card-content>
+      <ion-card-title>
+        Dağ Deviren
+      </ion-card-title>
+      <p>
+        1 dilim dil peyniri, 1 dilim kaşar peyniri, 1 dilim beyaz peynir, 2 dilim salam, 2 dilim jambon, zeytin ezmesi, kekik, zeytin yağı.
+      </p>
+    </ion-card-content>
+
+    <ion-item big color="primary">
+      <ion-icon name="share-alt" item-start></ion-icon>
+      Hemen sipariş ver
+      <ion-badge item-end>10TL</ion-badge>
+    </ion-item>
+
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="secondary" icon-start>
+          <ion-icon name='md-create'></ion-icon>
+          Düzenle
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button clear small color="danger" icon-start>
+          <ion-icon name='trash'></ion-icon>
+          Sil
+        </button>
+
+      </ion-col>
+    </ion-row>
+
   </ion-card>
-  <button id="sandwich-button1" ion-button color="positive" block icon-right>
-    Sipariş Ver!
-    <ion-icon name="arrow-round-forward"></ion-icon>
-  </button>
+
 </ion-content>
