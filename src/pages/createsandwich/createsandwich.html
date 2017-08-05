@@ -7,10 +7,9 @@
 
 <ion-content class="cards-bg">
 
-
   <ion-card>
     <ion-card-header>
-      Ekmek seçin
+      Ekmek
     </ion-card-header>
 
       <div>
@@ -144,68 +143,92 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card>
-    <ion-card-header>
-      Süsleme
-    </ion-card-header>
 
-    <ion-card-content>
 
-      <div padding>
-        <ion-segment [(ngModel)]="susleme">
-          <ion-segment-button value="kittens">
-            Kekik
-          </ion-segment-button>
-          <ion-segment-button value="puppies">
-            Zeytin yağı
-          </ion-segment-button>
-        </ion-segment>
-      </div>
+  <ion-list no-border>
 
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
+    <ion-list-header lang="tr">
       Yeşillik
-    </ion-card-header>
+    </ion-list-header>
 
-    <ion-card-content>
+    <ion-item>
 
-      <div padding>
-        <ion-segment [(ngModel)]="yesillik">
-          <ion-segment-button value="kittens">
-            Domates
-          </ion-segment-button>
-          <ion-segment-button value="puppies">
-            Salatalık
-          </ion-segment-button>
-        </ion-segment>
-      </div>
+      <ion-toggle checked="false"></ion-toggle>
+      <ion-label>
+        Domates
+      </ion-label>
+      <ion-avatar item-start>
+        <img src="assets/img/domates.jpg">
+      </ion-avatar>
+    </ion-item>
 
-    </ion-card-content>
-  </ion-card>
+    <ion-item>
+      <ion-toggle checked="false"></ion-toggle>
+      <ion-label>
+        Salatalık
+      </ion-label>
+      <ion-avatar item-start>
+        <img src="assets/img/salatalık.jpg">
+      </ion-avatar>
+    </ion-item>
 
-  <ion-card>
-    <ion-card-header>
+  </ion-list>
+
+
+  <ion-list>
+
+    <ion-list-header>
+      Süsleme
+    </ion-list-header>
+
+    <ion-item>
+      <ion-toggle checked="true"></ion-toggle>
+      <ion-label>
+        Kekik
+      </ion-label>
+      <ion-avatar item-start>
+        <img src="assets/img/kekik.jpg">
+      </ion-avatar>
+    </ion-item>
+
+    <ion-item>
+      <ion-toggle checked="true"></ion-toggle>
+      <ion-label>
+        Zeytinyağı
+      </ion-label>
+      <ion-avatar item-start>
+        <img src="assets/img/zeytinyagi.jpg">
+      </ion-avatar>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list>
+
+    <ion-list-header>
       Sos
-    </ion-card-header>
+    </ion-list-header>
 
-    <ion-card-content>
+    <ion-item>
+      <ion-toggle checked="true"></ion-toggle>
+      <ion-label>
+        Zeytin ezmesi
+      </ion-label>
+      <ion-avatar item-start>
+        <img src="assets/img/zeytinezmesi.jpg">
+      </ion-avatar>
+    </ion-item>
 
-      <div padding>
-        <ion-segment [(ngModel)]="sos">
-          <ion-segment-button value="kittens">
-            Zeytin ezmesi
-          </ion-segment-button>
-          <ion-segment-button value="puppies">
-            Acuka
-          </ion-segment-button>
-        </ion-segment>
-      </div>
+    <ion-item>
+      <ion-toggle checked="true"></ion-toggle>
+      <ion-label>
+        Acuka
+      </ion-label>
+      <ion-avatar item-start>
+        <img src="assets/img/acuka.jpg">
+      </ion-avatar>
+    </ion-item>
 
-    </ion-card-content>
-  </ion-card>
-
+  </ion-list>
 
 </ion-content>
