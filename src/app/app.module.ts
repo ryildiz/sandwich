@@ -10,12 +10,14 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 import {GooglePlus} from '@ionic-native/google-plus';
 import {MySandwichesPage} from "../pages/mysandwich/mysandwiches";
 import {CreateSandwichPage} from "../pages/createsandwich/createsandwich";
+import {ModalContentPage} from "../pages/createsandwich/modalcontent";
 
 @NgModule({
     declarations: [
         MyApp,
         MySandwichesPage,
         CreateSandwichPage,
+        ModalContentPage,
         LoginPage
     ],
     imports: [
@@ -27,6 +29,7 @@ import {CreateSandwichPage} from "../pages/createsandwich/createsandwich";
         MyApp,
         MySandwichesPage,
         CreateSandwichPage,
+        ModalContentPage,
         LoginPage
     ],
     providers: [

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {NavController, NavParams} from 'ionic-angular';
+import {ModalController, NavController, NavParams} from 'ionic-angular';
+import {ModalContentPage} from "./modalcontent";
 
 @Component({
   selector: 'page-createsandwich',
@@ -16,9 +17,23 @@ export class CreateSandwichPage {
         userId: string
     };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-      this.loginData = this.navParams.get("loginData");
-  }
+    sandwich :any = {
+      name:String,
+      price:String
+    };
+
+   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams) {
+       this.loginData = this.navParams.get("loginData");
+   }
+
+    openSaveModal() {
+
+        this.sandwich.name = 'Dag deviren';
+
+        let modal = this.modalCtrl.create(ModalContentPage, {'sandwich': this.sandwich});
+        modal.present();
+
+    }
 
 
 }
