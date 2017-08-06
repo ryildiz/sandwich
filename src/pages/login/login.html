@@ -21,5 +21,10 @@
         Login with Google
     </button>
 
+    <button ion-button block color="primary" (click)="loginUserFb()" *ngIf="!userProfile">
+        <ion-icon name="logo-googleplus"></ion-icon>
+        Login with Facebook
+    </button>
+
 
 </ion-content>

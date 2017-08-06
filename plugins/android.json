@@ -27,6 +27,11 @@
         },
         "cordova-plugin-googleplus": {
             "PACKAGE_NAME": "rhtech.sandvich"
+        },
+        "cordova-plugin-facebook4": {
+            "APP_ID": "264077404088698",
+            "APP_NAME": "sandvich",
+            "PACKAGE_NAME": "rhtech.sandwich"
         }
     },
     "dependent_plugins": {}

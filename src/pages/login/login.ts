@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {SandwichPage} from '../sandwich/sandwich';
 import {GooglePlus} from '@ionic-native/google-plus';
+import {Facebook} from '@ionic-native/facebook';
 
 @Component({
     selector: 'page-login',
@@ -11,7 +12,7 @@ export class LoginPage {
 
     userProfile: any = null;
 
-    constructor(public navCtrl: NavController, private gplus: GooglePlus) {
+    constructor(public navCtrl: NavController, private gplus: GooglePlus, private facebook: Facebook) {
         console.log("hello mate!");
     }
 
@@ -26,6 +27,13 @@ export class LoginPage {
             'offline': true
         }).then(res => {
             console.log(res); // holds user image etc
+            this.goToSandwich({loginData: res});
+        }).catch(err => console.error(err));
+    }
+
+    loginUserFb() {
+        this.facebook.login(['email']).then((res) => {
+            console.log(res);
             this.goToSandwich({loginData: res});
         }).catch(err => console.error(err));
     }
