@@ -3,6 +3,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import {MyApp} from './app.component';
 import {LoginPage} from "../pages/login/login";
+import {SandwichPage} from "../pages/sandwich/sandwich";
+import { TabsPage } from "../pages/tabs/tabs";
 
 
 import {StatusBar} from '@ionic-native/status-bar';
@@ -11,14 +13,17 @@ import {GooglePlus} from '@ionic-native/google-plus';
 import {MySandwichesPage} from "../pages/mysandwich/mysandwiches";
 import {CreateSandwichPage} from "../pages/createsandwich/createsandwich";
 import {ModalContentPage} from "../pages/createsandwich/modalcontent";
+import {Facebook} from "@ionic-native/facebook";
 
 @NgModule({
     declarations: [
         MyApp,
         MySandwichesPage,
+        SandwichPage,
         CreateSandwichPage,
         ModalContentPage,
-        LoginPage
+        LoginPage,
+        TabsPage
     ],
     imports: [
         BrowserModule,
@@ -28,14 +33,17 @@ import {ModalContentPage} from "../pages/createsandwich/modalcontent";
     entryComponents: [
         MyApp,
         MySandwichesPage,
+        SandwichPage,
         CreateSandwichPage,
         ModalContentPage,
-        LoginPage
+        LoginPage,
+        TabsPage
     ],
     providers: [
         StatusBar,
         SplashScreen,
         GooglePlus,
+        Facebook,
         {provide: ErrorHandler, useClass: IonicErrorHandler}
     ]
 })

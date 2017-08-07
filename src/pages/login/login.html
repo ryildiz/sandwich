@@ -8,23 +8,29 @@
 
 <ion-content padding>
 
-    <ion-item *ngIf="userProfile">
-        <ion-avatar item-left>
-            <img [src]="userProfile.photoURL">
-        </ion-avatar>
-        <h2>{{ userProfile.displayName }}</h2>
-        <h3>{{ userProfile.email }}</h3>
-    </ion-item>
+    <div style="padding: 1em;">
 
-    <button ion-button block color="danger" (click)="loginUser()" *ngIf="!userProfile">
-        <ion-icon name="logo-googleplus"></ion-icon>
-        Login with Google
-    </button>
+        <img src="assets/img/logo.jpg"/>
 
-    <button ion-button block color="primary" (click)="loginUserFb()" *ngIf="!userProfile">
-        <ion-icon name="logo-googleplus"></ion-icon>
-        Login with Facebook
-    </button>
+        <div>
+
+            <h4>Sandivic</h4>
+            <p>
+                Sec, Tasarla, Sira bekleme hemen ye!
+            </p>
+
+            <button ion-button block color="danger" (click)="loginUserG()">
+                <ion-icon name="logo-googleplus"></ion-icon>
+                <span style="padding-left: 8px; padding-right: 8px;">Google Login</span>
+            </button>
+
+            <button ion-button block color="primary" (click)="loginUserF()">
+                <ion-icon name="logo-facebook"></ion-icon>
+                <span style="padding-left: 8px; padding-right: 8px;">Facebook Login</span>
+            </button>
+
+        </div>
+    </div>
 
 
 </ion-content>
