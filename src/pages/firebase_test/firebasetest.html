@@ -1,0 +1,27 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Firebase test</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="cards-bg">
+
+    testing ....
+
+    <ion-item>
+        <ion-input [(ngModel)]="myInput"></ion-input>
+    </ion-item>
+    <button ion-item (click)="addItem()">
+        <ion-icon name="exit-outline" class="user-icon"></ion-icon>
+        add item
+    </button>
+    <ion-list>
+        <ion-item *ngFor="let item of arrData">
+            {{item.$value}}
+        </ion-item>
+    </ion-list>
+
+
+
+</ion-content>

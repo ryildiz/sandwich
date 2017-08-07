@@ -14,6 +14,18 @@ import {MySandwichesPage} from "../pages/mysandwich/mysandwiches";
 import {CreateSandwichPage} from "../pages/createsandwich/createsandwich";
 import {ModalContentPage} from "../pages/createsandwich/modalcontent";
 import {Facebook} from "@ionic-native/facebook";
+import {AngularFireModule} from "angularfire2";
+import {AngularFireDatabaseModule} from "angularfire2/database";
+import {FirebaseTestPage} from "../pages/firebase_test/firebasetest";
+
+var config = {
+    apiKey: "AIzaSyA730uys6aEhWaQjgbiqxxPtovkqg3psgE",
+    authDomain: "sandwich-f5301.firebaseapp.com",
+    databaseURL: "https://sandwich-f5301.firebaseio.com",
+    projectId: "sandwich-f5301",
+    storageBucket: "sandwich-f5301.appspot.com",
+    messagingSenderId: "902230738570"
+};
 
 @NgModule({
     declarations: [
@@ -22,12 +34,15 @@ import {Facebook} from "@ionic-native/facebook";
         SandwichPage,
         CreateSandwichPage,
         ModalContentPage,
+        FirebaseTestPage,
         LoginPage,
         TabsPage
     ],
     imports: [
         BrowserModule,
-        IonicModule.forRoot(MyApp)
+        IonicModule.forRoot(MyApp),
+        AngularFireDatabaseModule,
+        AngularFireModule.initializeApp(config)
     ],
     bootstrap: [IonicApp],
     entryComponents: [
@@ -36,6 +51,7 @@ import {Facebook} from "@ionic-native/facebook";
         SandwichPage,
         CreateSandwichPage,
         ModalContentPage,
+        FirebaseTestPage,
         LoginPage,
         TabsPage
     ],

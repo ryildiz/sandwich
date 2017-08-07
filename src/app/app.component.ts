@@ -8,6 +8,7 @@ import {MySandwichesPage} from "../pages/mysandwich/mysandwiches";
 import {CreateSandwichPage} from "../pages/createsandwich/createsandwich";
 import {LoginPage} from "../pages/login/login";
 import {TabsPage} from "../pages/tabs/tabs";
+import {FirebaseTestPage} from "../pages/firebase_test/firebasetest";
 
 
 
@@ -16,7 +17,8 @@ import {TabsPage} from "../pages/tabs/tabs";
 })
 export class MyApp {
 
-    rootPage:any = TabsPage;
+    // rootPage:any = TabsPage;
+    rootPage:any = FirebaseTestPage;
     // rootPage:any = LoginPage;
     // rootPage:any = MySandwichesPage;
     // rootPage:any = CreateSandwichPage;
