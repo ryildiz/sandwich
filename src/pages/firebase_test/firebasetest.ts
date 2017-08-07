@@ -26,4 +26,8 @@ export class FirebaseTestPage {
     this.fdb.list("/myitems/").push(this.myInput);
   }
 
+  deleteItem(i) {
+      this.fdb.list("/myitems/").remove(this.arrData[i].$key);
+  }
+
 }

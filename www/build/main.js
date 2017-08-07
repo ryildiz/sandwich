@@ -60,17 +60,19 @@ var FirebaseTestPage = (function () {
     FirebaseTestPage.prototype.addItem = function () {
         this.fdb.list("/myitems/").push(this.myInput);
     };
+    FirebaseTestPage.prototype.deleteItem = function (i) {
+        this.fdb.list("/myitems/").remove(this.arrData[i].$key);
+    };
     return FirebaseTestPage;
 }());
 FirebaseTestPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-firebasetest',template:/*ion-inline-start:"D:\ro\sandwich\src\pages\firebase_test\firebasetest.html"*/'\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Firebase test</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="cards-bg">\n\n\n\n    testing ....\n\n\n\n    <ion-item>\n\n        <ion-input [(ngModel)]="myInput"></ion-input>\n\n    </ion-item>\n\n    <button ion-item (click)="addItem()">\n\n        <ion-icon name="exit-outline" class="user-icon"></ion-icon>\n\n        add item\n\n    </button>\n\n    <ion-list>\n\n        <ion-item *ngFor="let item of arrData">\n\n            {{item.$value}}\n\n        </ion-item>\n\n    </ion-list>\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\ro\sandwich\src\pages\firebase_test\firebasetest.html"*/
+        selector: 'page-firebasetest',template:/*ion-inline-start:"D:\ro\sandwich\src\pages\firebase_test\firebasetest.html"*/'\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Firebase test</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="cards-bg">\n\n\n\n    testing ....\n\n\n\n    <ion-item>\n\n        <ion-input [(ngModel)]="myInput"></ion-input>\n\n    </ion-item>\n\n    <button ion-button icon-left color="danger" (click)="addItem()">\n\n        <ion-icon name="exit-outline" class="user-icon"></ion-icon>\n\n        add item\n\n    </button>\n\n    <ion-list>\n\n        <ion-item *ngFor="let item of arrData; let i = index" (click)="deleteItem(i)">\n\n            {{item.$value}}\n\n        </ion-item>\n\n    </ion-list>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\ro\sandwich\src\pages\firebase_test\firebasetest.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _c || Object])
 ], FirebaseTestPage);
 
+var _a, _b, _c;
 //# sourceMappingURL=firebasetest.js.map
 
 /***/ }),

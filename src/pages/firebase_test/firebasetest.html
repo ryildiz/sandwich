@@ -12,16 +12,15 @@
     <ion-item>
         <ion-input [(ngModel)]="myInput"></ion-input>
     </ion-item>
-    <button ion-item (click)="addItem()">
+    <button ion-button icon-left color="danger" (click)="addItem()">
         <ion-icon name="exit-outline" class="user-icon"></ion-icon>
         add item
     </button>
     <ion-list>
-        <ion-item *ngFor="let item of arrData">
+        <ion-item *ngFor="let item of arrData; let i = index" (click)="deleteItem(i)">
             {{item.$value}}
         </ion-item>
     </ion-list>
-
 
 
 </ion-content>
