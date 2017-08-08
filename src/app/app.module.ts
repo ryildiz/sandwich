@@ -5,7 +5,8 @@ import {MyApp} from './app.component';
 import {LoginPage} from "../pages/login/login";
 import {SandwichPage} from "../pages/sandwich/sandwich";
 import { TabsPage } from "../pages/tabs/tabs";
-
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
@@ -17,6 +18,7 @@ import {Facebook} from "@ionic-native/facebook";
 import {AngularFireModule} from "angularfire2";
 import {AngularFireDatabaseModule} from "angularfire2/database";
 import {FirebaseTestPage} from "../pages/firebase_test/firebasetest";
+import {HttpModule, Http, RequestOptions, XHRBackend} from "@angular/http";
 
 var config = {
     apiKey: "AIzaSyA730uys6aEhWaQjgbiqxxPtovkqg3psgE",
@@ -26,6 +28,10 @@ var config = {
     storageBucket: "sandwich-f5301.appspot.com",
     messagingSenderId: "902230738570"
 };
+
+export function createTranslateLoader(http: Http) {
+    return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
     declarations: [
@@ -41,6 +47,14 @@ var config = {
     imports: [
         BrowserModule,
         IonicModule.forRoot(MyApp),
+        HttpModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: (createTranslateLoader),
+                deps: [Http]
+            }
+        }),
         AngularFireDatabaseModule,
         AngularFireModule.initializeApp(config)
     ],
@@ -60,7 +74,12 @@ var config = {
         SplashScreen,
         GooglePlus,
         Facebook,
-        {provide: ErrorHandler, useClass: IonicErrorHandler}
+        {provide: ErrorHandler, useClass: IonicErrorHandler},
+        {
+            provide: Http,
+            useFactory: (backend: XHRBackend, defaultOptions: RequestOptions) => new Http(backend, defaultOptions),
+            deps: [XHRBackend, RequestOptions]
+        }
     ]
 })
 export class AppModule {

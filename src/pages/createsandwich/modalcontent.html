@@ -1,4 +1,3 @@
-
 <ion-header>
   <ion-navbar>
     <ion-title>Sandviçinize isim verin</ion-title>
@@ -7,15 +6,25 @@
 
 <ion-content class="cards-bg">
 
-  {{sandwich.name}}
+  <ion-card>
+    <ion-card-header>
+      Sandviç'inize bir isim veriniz!
+    </ion-card-header>
+    <ion-card-content>
+      <ion-input type="text"  [(ngModel)]="sandwich.name"></ion-input>
+      <p>{{sandwich.icerik}}</p>
+    </ion-card-content>
+  </ion-card>
 
-  <ion-item-divider></ion-item-divider>
   <ion-item big color="primary" (click)="saveSandwich()">
     <ion-icon name="share-alt" item-start></ion-icon>
     Kaydet
   </ion-item>
-  <ion-item-divider></ion-item-divider>
 
+  <ion-item big color="primary" (click)="dismiss()">
+    <ion-icon name="share-alt" item-start></ion-icon>
+    İptal
+  </ion-item>
 
 
 </ion-content>

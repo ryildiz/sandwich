@@ -1,3 +1,5 @@
+import {TranslateService} from "@ngx-translate/core";
+
 export class Sandwich {
 
     name?:string;
@@ -11,22 +13,22 @@ export class Sandwich {
         kasardilimsayisi?:number,
         dil?:string
         dildilimsayisi?:number
-    };
+    } = {};
 
     yesillik?: {
         domates?:string,
         salatalik?:string
-    };
+    } = {};
 
     susleme?: {
         kekik?:string,
         zeytinyagi?:string
-    };
+    } = {};
 
     sos?: {
         zeytinezmesi?:string,
         acuka?:string
-    };
+    } = {};
 
     fiyat?:number;
 
@@ -35,8 +37,6 @@ export class Sandwich {
         this.peynir.kasardilimsayisi=1;
         this.peynir.beyazdilimsayisi=1;
         this.peynir.dildilimsayisi=1;
-        this.icerik = this.getText();
-
     }
 
     dilArtir(){
@@ -72,24 +72,33 @@ export class Sandwich {
     private MAXDILIM = 10;
     private SPACE = ' ';
 
-    getText() {
+    setIcerik(translate: TranslateService) {
 
-       let desc=
-        (this.ekmekboyu === 'tam' ? 'Tam' : 'Yarým') +  this.SPACE +(this.ekmektipi === 'tahilli' ? 'tahýllý' : 'beyaz') + this.SPACE + 'ekmek,' + this.SPACE +
-        this.peynir ? (this.peynir.beyaz ? this.peynir.beyazdilimsayisi + this.SPACE + 'dilim beyaz peynir,'  + this.SPACE : '') : '' +
-        this.peynir ? (this.peynir.kasar ? this.peynir.kasardilimsayisi + this.SPACE + 'dilim kaþar peyniri,' + this.SPACE : '') : '' +
-        this.peynir ? (this.peynir.dil ? this.peynir.dildilimsayisi + this.SPACE + 'dilim dil peyniri' + this.SPACE : '') : '' +
+        let yarim       = translate.get('yarim').subscribe(value => {
+            console.log('---> ' + value);
+            return value;
+        });
+        let tahilli     = translate.get('tahilli').subscribe(value => {console.log('---> ' + value); return value});
+        let kasar       = translate.get('kasar').subscribe(value => {console.log('---> ' + value); return value});
+        let salatalik   = translate.get('salatalik').subscribe(value => {console.log('---> ' + value); return value});
+        let zeytinyagi  = translate.get('zeytinyagi').subscribe(value => {console.log('---> ' + value); return value});
 
-        this.yesillik ? (this.yesillik.domates ? 'domates,' + this.SPACE : '') : '' +
-        this.yesillik ? (this.yesillik.salatalik ? 'salatalýk,' + this.SPACE : '') : '' +
+       this.icerik =
+        (this.ekmekboyu === 'tam' ? 'Tam' : yarim) +  this.SPACE +(this.ekmektipi === 'tahilli' ? tahilli : 'beyaz') + this.SPACE + 'ekmek,' + this.SPACE  +
+        (this.peynir ? (this.peynir.beyaz ? this.peynir.beyazdilimsayisi + this.SPACE + 'dilim beyaz peynir,'  + this.SPACE : '') : '') +
+        (this.peynir ? (this.peynir.kasar ? this.peynir.kasardilimsayisi + this.SPACE + 'dilim '+kasar+' peyniri,' + this.SPACE : '') : '') +
+        (this.peynir ? (this.peynir.dil ? this.peynir.dildilimsayisi + this.SPACE + 'dilim dil peyniri,' + this.SPACE : '') : '') +
 
-        this.susleme ? (this.susleme.kekik ? 'kekik,' + this.SPACE : '') : '' +
-        this.susleme ? (this.susleme.zeytinyagi ? 'zeytinyaðý,' + this.SPACE : '') : '' +
+        (this.yesillik ? (this.yesillik.domates ? 'domates,' + this.SPACE : '') : '') +
+        (this.yesillik ? (this.yesillik.salatalik ? salatalik + ',' + this.SPACE : '') : '') +
 
-        this.sos ? (this.sos.zeytinezmesi ? 'zeytin ezmesi,' + this.SPACE : '') : '' +
-        this.sos ? (this.sos.acuka ? 'dil peyniri' + this.SPACE : '') : '';
+        (this.susleme ? (this.susleme.kekik ? 'kekik,' + this.SPACE : '') : '') +
+        (this.susleme ? (this.susleme.zeytinyagi ? zeytinyagi + ',' + this.SPACE : '') : '') +
 
-       return desc;
+        (this.sos ? (this.sos.zeytinezmesi ? 'zeytin ezmesi,' + this.SPACE : '') : '') +
+        (this.sos ? (this.sos.acuka ? 'acuka' + this.SPACE : '') : '');
+
+       return this.icerik;
 
     }
 
