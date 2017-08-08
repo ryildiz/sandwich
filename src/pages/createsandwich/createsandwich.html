@@ -62,7 +62,7 @@
 
     <ion-row style="margin-top: -12px; padding-right: 0px;">
     <ion-col style="padding: 0px; margin-left: 24px;">
-      <button ion-button icon-left clear small color="secondary">
+      <button ion-button icon-left clear small color="secondary" (click)="sandwich.beyazArtir()">
         <ion-icon name="ios-add-circle-outline"></ion-icon>
         <div>Dilim ekle</div>
       </button>
@@ -74,8 +74,8 @@
       </button>
     </ion-col>
     <ion-col style="padding: 0px;">
-      <button ion-button icon-left clear small>
-        <ion-badge item-end>1 dilim</ion-badge>
+      <button ion-button icon-left clear small (click)="sandwich.beyazAzalt()">
+        <ion-badge item-end>{{sandwich.peynir.beyazdilimsayisi}} dilim</ion-badge>
       </button>
     </ion-col>
 
@@ -90,20 +90,20 @@
 
       <ion-row style="margin-top: -12px; padding-right: 0px;">
         <ion-col style="padding: 0px; margin-left: 24px;">
-          <button ion-button icon-left clear small color="secondary">
+          <button ion-button icon-left clear small color="secondary" (click)="sandwich.kasarArtir()">
             <ion-icon name="ios-add-circle-outline"></ion-icon>
             <div>Dilim ekle</div>
           </button>
         </ion-col>
         <ion-col style="padding: 0px;">
-          <button ion-button icon-left clear small color="danger">
+          <button ion-button icon-left clear small color="danger" (click)="sandwich.kasarAzalt()">
             <ion-icon name="ios-remove-outline"></ion-icon>
             <div>Dilim azalt</div>
           </button>
         </ion-col>
         <ion-col style="padding: 0px;">
           <button ion-button icon-left clear small>
-            <ion-badge item-end>1 dilim</ion-badge>
+            <ion-badge item-end>{{sandwich.peynir.kasardilimsayisi}} dilim</ion-badge>
           </button>
         </ion-col>
 
@@ -118,20 +118,20 @@
 
       <ion-row style="margin-top: -12px; padding-right: 0px;">
         <ion-col style="padding: 0px; margin-left: 24px;">
-          <button ion-button icon-left clear small color="secondary">
+          <button ion-button icon-left clear small color="secondary" (click)="sandwich.dilArtir()">
             <ion-icon name="ios-add-circle-outline"></ion-icon>
             <div>Dilim ekle</div>
           </button>
         </ion-col>
         <ion-col style="padding: 0px;">
-          <button ion-button icon-left clear small color="danger">
+          <button ion-button icon-left clear small color="danger" (click)="sandwich.dilAzalt()">
             <ion-icon name="ios-remove-outline"></ion-icon>
             <div>Dilim azalt</div>
           </button>
         </ion-col>
         <ion-col style="padding: 0px;">
           <button ion-button icon-left clear small>
-            <ion-badge item-end>1 dilim</ion-badge>
+            <ion-badge item-end>{{sandwich.peynir.dildilimsayisi}} dilim</ion-badge>
           </button>
         </ion-col>
 
