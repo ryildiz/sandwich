@@ -1,14 +1,18 @@
 
 <ion-header>
   <ion-navbar>
-    <ion-title>Sandviç oluştur</ion-title>
+    <ion-title>SandviÃ§ oluÅŸtur</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="cards-bg">
 
 
-
+  <ion-item>
+    <ion-label floating>{{'zeytinyagi' | translate}}</ion-label>
+    <ion-label floating>{{'zeytinyagi' | translate}}</ion-label>
+    <ion-label floating>{{'zeytinyagi' | translate}}</ion-label>
+  </ion-item>
 
   <ion-card>
     <ion-card-header>
@@ -26,7 +30,7 @@
           <ion-label>Boyu</ion-label>
           <ion-select [(ngModel)]="sandwich.ekmekboyu" interface="popover">
             <ion-option value="tam">Tam</ion-option>
-            <ion-option value="yarim">Yarım</ion-option>
+            <ion-option value="yarim">Yar?m</ion-option>
           </ion-select>
         </ion-item>
       </ion-list>
@@ -35,7 +39,7 @@
         <ion-item>
           <ion-label>Tipi</ion-label>
           <ion-select [(ngModel)]="sandwich.ekmektipi" interface="popover">
-            <ion-option value="tahilli">Tahıllı</ion-option>
+            <ion-option value="tahilli">Tah?ll?</ion-option>
             <ion-option value="beyaz">Beyaz</ion-option>
           </ion-select>
         </ion-item>
@@ -87,7 +91,7 @@
       <ion-item-divider></ion-item-divider>
 
       <ion-item style="padding-left: 0px; padding-bottom: 0px;">
-        <ion-label>Kaşar peyniri</ion-label>
+        <ion-label>KaÅŸar peyniri</ion-label>
         <ion-checkbox color="royal" [(ngModel)]="sandwich.peynir.kasar"></ion-checkbox>
       </ion-item>
 
@@ -151,7 +155,7 @@
   <ion-list no-border>
 
     <ion-list-header lang="tr">
-      Yeşillik
+      YeÅŸillik
     </ion-list-header>
 
     <ion-item>
@@ -168,10 +172,10 @@
     <ion-item>
       <ion-toggle [(ngModel)]="sandwich.yesillik.salatalik"></ion-toggle>
       <ion-label>
-        Salatalık
+        SalatalÄ±k
       </ion-label>
       <ion-avatar item-start>
-        <img src="assets/img/salatalık.jpg">
+        <img src="assets/img/salatal?k.jpg">
       </ion-avatar>
     </ion-item>
 
@@ -181,7 +185,7 @@
   <ion-list>
 
     <ion-list-header>
-      Süsleme
+      SÃ¼sleme
     </ion-list-header>
 
     <ion-item>
@@ -197,7 +201,7 @@
     <ion-item>
       <ion-toggle [(ngModel)]="sandwich.susleme.zeytinyagi"></ion-toggle>
       <ion-label>
-        Zeytinyağı
+        ZeytinyaÄŸÄ±
       </ion-label>
       <ion-avatar item-start>
         <img src="assets/img/zeytinyagi.jpg">
@@ -236,12 +240,12 @@
 
 
   <ion-fab right bottom style="margin-bottom:13px;">
-    <button ion-fab mini style="width:100px; height: 42px; font-size: 14px;" color="danger">Fiyatı {{sandwich.fiyat}} TL</button>
+    <button ion-fab mini style="width:100px; height: 42px; font-size: 14px;" color="danger">FiyatÄ± {{sandwich.fiyat}} TL</button>
   </ion-fab>
   <ion-item-divider></ion-item-divider>
   <ion-item big color="primary" (click)="openSaveModal()">
     <ion-icon name="share-alt" item-start></ion-icon>
-    Sandviç oluştur
+    SandviÃ§ oluÅŸtur
   </ion-item>
   <ion-item-divider></ion-item-divider>
 

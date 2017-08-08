@@ -27,10 +27,8 @@ export class CreateSandwichPage {
                public navParams: NavParams) {
        this.loginData = this.navParams.get("loginData");
 
-       debugger;
-console.log('default lang is ' + translate.getDefaultLang());
 
-debugger;
+console.log('default lang is ' + translate.getDefaultLang());
 
 
        let yarim       = translate.get('yarim').subscribe(value => {
