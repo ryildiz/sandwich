@@ -1,4 +1,4 @@
-import {TranslateService} from "@ngx-translate/core";
+import {SandwichLabels} from "./SndwichLabels";
 
 export class Sandwich {
 
@@ -37,10 +37,12 @@ export class Sandwich {
         this.peynir.kasardilimsayisi=1;
         this.peynir.beyazdilimsayisi=1;
         this.peynir.dildilimsayisi=1;
+        this.ekmektipi='tahilli';
+        this.ekmekboyu='tam';
     }
 
     dilArtir(){
-        if(this.peynir.dildilimsayisi<this.MAXDILIM)
+        if(this.peynir.dildilimsayisi<this.maxdilim())
             this.peynir.dildilimsayisi++;
     }
 
@@ -50,7 +52,7 @@ export class Sandwich {
     }
 
     beyazArtir(){
-        if(this.peynir.beyazdilimsayisi<this.MAXDILIM)
+        if(this.peynir.beyazdilimsayisi<this.maxdilim())
             this.peynir.beyazdilimsayisi++;
     }
 
@@ -60,7 +62,7 @@ export class Sandwich {
     }
 
     kasarArtir(){
-        if(this.peynir.kasardilimsayisi<this.MAXDILIM)
+        if(this.peynir.kasardilimsayisi<this.maxdilim())
             this.peynir.kasardilimsayisi++;
     }
 
@@ -69,34 +71,30 @@ export class Sandwich {
             this.peynir.kasardilimsayisi--;
     }
 
-    private MAXDILIM = 10;
-    private SPACE = ' ';
+    maxdilim() {
+        return 10;
+    };
+    
+    setIcerik(labels:SandwichLabels) {
 
-    setIcerik(translate: TranslateService) {
-
-        let yarim       = translate.get('yarim').subscribe(value => {
-            console.log('---> ' + value);
-            return value;
-        });
-        let tahilli     = translate.get('tahilli').subscribe(value => {console.log('---> ' + value); return value});
-        let kasar       = translate.get('kasar').subscribe(value => {console.log('---> ' + value); return value});
-        let salatalik   = translate.get('salatalik').subscribe(value => {console.log('---> ' + value); return value});
-        let zeytinyagi  = translate.get('zeytinyagi').subscribe(value => {console.log('---> ' + value); return value});
-
+      let SPACE = ' ';
+    
        this.icerik =
-        (this.ekmekboyu === 'tam' ? 'Tam' : yarim) +  this.SPACE +(this.ekmektipi === 'tahilli' ? tahilli : 'beyaz') + this.SPACE + 'ekmek,' + this.SPACE  +
-        (this.peynir ? (this.peynir.beyaz ? this.peynir.beyazdilimsayisi + this.SPACE + 'dilim beyaz peynir,'  + this.SPACE : '') : '') +
-        (this.peynir ? (this.peynir.kasar ? this.peynir.kasardilimsayisi + this.SPACE + 'dilim '+kasar+' peyniri,' + this.SPACE : '') : '') +
-        (this.peynir ? (this.peynir.dil ? this.peynir.dildilimsayisi + this.SPACE + 'dilim dil peyniri,' + this.SPACE : '') : '') +
+        (this.ekmekboyu === 'tam' ? 'Tam' : labels.yarim) +  SPACE +(this.ekmektipi === 'tahilli' ? labels.tahilli : 'beyaz') + SPACE + 'ekmek,' + SPACE  +
+        (this.peynir ? (this.peynir.beyaz ? this.peynir.beyazdilimsayisi + SPACE + 'dilim beyaz peynir,'  + SPACE : '') : '') +
+        (this.peynir ? (this.peynir.kasar ? this.peynir.kasardilimsayisi + SPACE + 'dilim '+labels.kasar+' peyniri,' + SPACE : '') : '') +
+        (this.peynir ? (this.peynir.dil ? this.peynir.dildilimsayisi + SPACE + 'dilim dil peyniri,' + SPACE : '') : '') +
 
-        (this.yesillik ? (this.yesillik.domates ? 'domates,' + this.SPACE : '') : '') +
-        (this.yesillik ? (this.yesillik.salatalik ? salatalik + ',' + this.SPACE : '') : '') +
+        (this.yesillik ? (this.yesillik.domates ? 'domates,' + SPACE : '') : '') +
+        (this.yesillik ? (this.yesillik.salatalik ? labels.salatalik + ',' + SPACE : '') : '') +
 
-        (this.susleme ? (this.susleme.kekik ? 'kekik,' + this.SPACE : '') : '') +
-        (this.susleme ? (this.susleme.zeytinyagi ? zeytinyagi + ',' + this.SPACE : '') : '') +
+        (this.susleme ? (this.susleme.kekik ? 'kekik,' + SPACE : '') : '') +
+        (this.susleme ? (this.susleme.zeytinyagi ? labels.zeytinyagi + ',' + SPACE : '') : '') +
 
-        (this.sos ? (this.sos.zeytinezmesi ? 'zeytin ezmesi,' + this.SPACE : '') : '') +
-        (this.sos ? (this.sos.acuka ? 'acuka' + this.SPACE : '') : '');
+        (this.sos ? (this.sos.zeytinezmesi ? 'zeytin ezmesi,' + SPACE : '') : '') +
+        (this.sos ? (this.sos.acuka ? 'acuka' + SPACE : '') : '');
+
+       this.icerik = this.icerik && this.icerik.trim().endsWith(',') ? this.icerik.substr(0, this.icerik.lastIndexOf(',')) : this.icerik;
 
        return this.icerik;
 

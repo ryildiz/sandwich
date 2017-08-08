@@ -7,13 +7,6 @@
 
 <ion-content class="cards-bg">
 
-
-  <ion-item>
-    <ion-label floating>{{'zeytinyagi' | translate}}</ion-label>
-    <ion-label floating>{{'zeytinyagi' | translate}}</ion-label>
-    <ion-label floating>{{'zeytinyagi' | translate}}</ion-label>
-  </ion-item>
-
   <ion-card>
     <ion-card-header>
       Ekmek
@@ -30,7 +23,7 @@
           <ion-label>Boyu</ion-label>
           <ion-select [(ngModel)]="sandwich.ekmekboyu" interface="popover">
             <ion-option value="tam">Tam</ion-option>
-            <ion-option value="yarim">Yar?m</ion-option>
+            <ion-option value="yarim">Yarım</ion-option>
           </ion-select>
         </ion-item>
       </ion-list>
@@ -39,7 +32,7 @@
         <ion-item>
           <ion-label>Tipi</ion-label>
           <ion-select [(ngModel)]="sandwich.ekmektipi" interface="popover">
-            <ion-option value="tahilli">Tah?ll?</ion-option>
+            <ion-option value="tahilli">Tahıllı</ion-option>
             <ion-option value="beyaz">Beyaz</ion-option>
           </ion-select>
         </ion-item>
@@ -175,7 +168,7 @@
         Salatalık
       </ion-label>
       <ion-avatar item-start>
-        <img src="assets/img/salatal?k.jpg">
+        <img src="assets/img/salatalık.jpg">
       </ion-avatar>
     </ion-item>
 

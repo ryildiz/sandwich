@@ -3,6 +3,7 @@ import {ModalController, NavController, NavParams} from 'ionic-angular';
 import {ModalContentPage} from "./modalcontent";
 import {Sandwich} from "../../model/Sandwich";
 import {TranslateService} from "@ngx-translate/core";
+ import {SandwichLabels} from "../../model/SndwichLabels";
 
 @Component({
   selector: 'page-createsandwich',
@@ -19,7 +20,7 @@ export class CreateSandwichPage {
         userId: string
     };
 
-    sandwich = new Sandwich();
+    sandwich :Sandwich;
 
    constructor(public navCtrl: NavController,
                private translate: TranslateService,
@@ -27,26 +28,14 @@ export class CreateSandwichPage {
                public navParams: NavParams) {
        this.loginData = this.navParams.get("loginData");
 
-
-console.log('default lang is ' + translate.getDefaultLang());
-
-
-       let yarim       = translate.get('yarim').subscribe(value => {
-           console.log('---> ' + value);
-           return value;
-       });
-       let tahilli     = translate.get('tahilli').subscribe(value => {console.log('---> ' + value); return value});
-       let kasar       = translate.get('kasar').subscribe(value => {console.log('---> ' + value); return value});
-       let salatalik   = translate.get('salatalik').subscribe(value => {console.log('---> ' + value); return value});
-       let zeytinyagi  = translate.get('zeytinyagi').subscribe(value => {
-           console.log('---> ' + value);
-           return value
-       });
+       this.sandwich = new Sandwich();
 
    }
 
     openSaveModal() {
-        this.sandwich.setIcerik(this.translate);
+
+        this.sandwich.setIcerik(new SandwichLabels(this.translate));
+
         let modal = this.modalCtrl.create(ModalContentPage, {'sandwich': this.sandwich});
         modal.present();
 

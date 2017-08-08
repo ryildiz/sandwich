@@ -10,6 +10,7 @@ webpackJsonp([0],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modalcontent__ = __webpack_require__(237);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__model_Sandwich__ = __webpack_require__(410);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__model_SndwichLabels__ = __webpack_require__(427);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -24,29 +25,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var CreateSandwichPage = (function () {
     function CreateSandwichPage(navCtrl, translate, modalCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.translate = translate;
         this.modalCtrl = modalCtrl;
         this.navParams = navParams;
-        this.sandwich = new __WEBPACK_IMPORTED_MODULE_3__model_Sandwich__["a" /* Sandwich */]();
         this.loginData = this.navParams.get("loginData");
-        console.log('default lang is ' + translate.getDefaultLang());
-        var yarim = translate.get('yarim').subscribe(function (value) {
-            console.log('---> ' + value);
-            return value;
-        });
-        var tahilli = translate.get('tahilli').subscribe(function (value) { console.log('---> ' + value); return value; });
-        var kasar = translate.get('kasar').subscribe(function (value) { console.log('---> ' + value); return value; });
-        var salatalik = translate.get('salatalik').subscribe(function (value) { console.log('---> ' + value); return value; });
-        var zeytinyagi = translate.get('zeytinyagi').subscribe(function (value) {
-            console.log('---> ' + value);
-            return value;
-        });
+        this.sandwich = new __WEBPACK_IMPORTED_MODULE_3__model_Sandwich__["a" /* Sandwich */]();
     }
     CreateSandwichPage.prototype.openSaveModal = function () {
-        this.sandwich.setIcerik(this.translate);
+        this.sandwich.setIcerik(new __WEBPACK_IMPORTED_MODULE_5__model_SndwichLabels__["a" /* SandwichLabels */](this.translate));
         var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_2__modalcontent__["a" /* ModalContentPage */], { 'sandwich': this.sandwich });
         modal.present();
     };
@@ -54,7 +44,7 @@ var CreateSandwichPage = (function () {
 }());
 CreateSandwichPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-createsandwich',template:/*ion-inline-start:"D:\ro\sandwich\src\pages\createsandwich\createsandwich.html"*/'\n<ion-header>\n  <ion-navbar>\n    <ion-title>Sandviç oluştur</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="cards-bg">\n\n\n  <ion-item>\n    <ion-label floating>{{\'zeytinyagi\' | translate}}</ion-label>\n    <ion-label floating>{{\'zeytinyagi\' | translate}}</ion-label>\n    <ion-label floating>{{\'zeytinyagi\' | translate}}</ion-label>\n  </ion-item>\n\n  <ion-card>\n    <ion-card-header>\n      Ekmek\n    </ion-card-header>\n\n      <div>\n          <img src="assets/img/ekmek.jpg"/>\n      </div>\n\n    <ion-card-content>\n\n      <ion-list>\n        <ion-item>\n          <ion-label>Boyu</ion-label>\n          <ion-select [(ngModel)]="sandwich.ekmekboyu" interface="popover">\n            <ion-option value="tam">Tam</ion-option>\n            <ion-option value="yarim">Yar?m</ion-option>\n          </ion-select>\n        </ion-item>\n      </ion-list>\n\n      <ion-list>\n        <ion-item>\n          <ion-label>Tipi</ion-label>\n          <ion-select [(ngModel)]="sandwich.ekmektipi" interface="popover">\n            <ion-option value="tahilli">Tah?ll?</ion-option>\n            <ion-option value="beyaz">Beyaz</ion-option>\n          </ion-select>\n        </ion-item>\n      </ion-list>\n\n    </ion-card-content>\n  </ion-card>\n\n\n  <ion-card>\n    <ion-card-header>\n      Peynir\n    </ion-card-header>\n\n    <div>\n      <img src="assets/img/peynir.jpg"/>\n    </div>\n\n\n    <ion-card-content>\n\n      <ion-item-divider></ion-item-divider>\n    <ion-item style="padding-left: 0px; padding-bottom: 0px;">\n        <ion-label>Beyaz peynir</ion-label>\n        <ion-checkbox color="royal" [(ngModel)]="sandwich.peynir.beyaz"></ion-checkbox>\n    </ion-item>\n\n    <ion-row style="margin-top: -12px; padding-right: 0px;">\n    <ion-col style="padding: 0px; margin-left: 24px;">\n      <button ion-button icon-left clear small color="secondary" (click)="sandwich.beyazArtir()">\n        <ion-icon name="ios-add-circle-outline"></ion-icon>\n        <div>Dilim ekle</div>\n      </button>\n    </ion-col>\n    <ion-col style="padding: 0px;">\n      <button ion-button icon-left clear small color="danger">\n        <ion-icon name="ios-remove-outline"></ion-icon>\n        <div>Dilim azalt</div>\n      </button>\n    </ion-col>\n    <ion-col style="padding: 0px;">\n      <button ion-button icon-left clear small (click)="sandwich.beyazAzalt()">\n        <ion-badge item-end>{{sandwich.peynir.beyazdilimsayisi}} dilim</ion-badge>\n      </button>\n    </ion-col>\n\n  </ion-row>\n\n      <ion-item-divider></ion-item-divider>\n\n      <ion-item style="padding-left: 0px; padding-bottom: 0px;">\n        <ion-label>Kaşar peyniri</ion-label>\n        <ion-checkbox color="royal" [(ngModel)]="sandwich.peynir.kasar"></ion-checkbox>\n      </ion-item>\n\n      <ion-row style="margin-top: -12px; padding-right: 0px;">\n        <ion-col style="padding: 0px; margin-left: 24px;">\n          <button ion-button icon-left clear small color="secondary" (click)="sandwich.kasarArtir()">\n            <ion-icon name="ios-add-circle-outline"></ion-icon>\n            <div>Dilim ekle</div>\n          </button>\n        </ion-col>\n        <ion-col style="padding: 0px;">\n          <button ion-button icon-left clear small color="danger" (click)="sandwich.kasarAzalt()">\n            <ion-icon name="ios-remove-outline"></ion-icon>\n            <div>Dilim azalt</div>\n          </button>\n        </ion-col>\n        <ion-col style="padding: 0px;">\n          <button ion-button icon-left clear small>\n            <ion-badge item-end>{{sandwich.peynir.kasardilimsayisi}} dilim</ion-badge>\n          </button>\n        </ion-col>\n\n      </ion-row>\n\n      <ion-item-divider></ion-item-divider>\n\n      <ion-item style="padding-left: 0px; padding-bottom: 0px;">\n        <ion-label>Dil peyniri</ion-label>\n        <ion-checkbox color="royal" [(ngModel)]="sandwich.peynir.dil"></ion-checkbox>\n      </ion-item>\n\n      <ion-row style="margin-top: -12px; padding-right: 0px;">\n        <ion-col style="padding: 0px; margin-left: 24px;">\n          <button ion-button icon-left clear small color="secondary" (click)="sandwich.dilArtir()">\n            <ion-icon name="ios-add-circle-outline"></ion-icon>\n            <div>Dilim ekle</div>\n          </button>\n        </ion-col>\n        <ion-col style="padding: 0px;">\n          <button ion-button icon-left clear small color="danger" (click)="sandwich.dilAzalt()">\n            <ion-icon name="ios-remove-outline"></ion-icon>\n            <div>Dilim azalt</div>\n          </button>\n        </ion-col>\n        <ion-col style="padding: 0px;">\n          <button ion-button icon-left clear small>\n            <ion-badge item-end>{{sandwich.peynir.dildilimsayisi}} dilim</ion-badge>\n          </button>\n        </ion-col>\n\n      </ion-row>\n\n      <ion-item-divider></ion-item-divider>\n\n\n    </ion-card-content>\n  </ion-card>\n\n\n\n  <ion-list no-border>\n\n    <ion-list-header lang="tr">\n      Yeşillik\n    </ion-list-header>\n\n    <ion-item>\n\n      <ion-toggle [(ngModel)]="sandwich.yesillik.domates"></ion-toggle>\n      <ion-label>\n        Domates\n      </ion-label>\n      <ion-avatar item-start>\n        <img src="assets/img/domates.jpg">\n      </ion-avatar>\n    </ion-item>\n\n    <ion-item>\n      <ion-toggle [(ngModel)]="sandwich.yesillik.salatalik"></ion-toggle>\n      <ion-label>\n        Salatalık\n      </ion-label>\n      <ion-avatar item-start>\n        <img src="assets/img/salatal?k.jpg">\n      </ion-avatar>\n    </ion-item>\n\n  </ion-list>\n\n\n  <ion-list>\n\n    <ion-list-header>\n      Süsleme\n    </ion-list-header>\n\n    <ion-item>\n      <ion-toggle [(ngModel)]="sandwich.susleme.kekik"></ion-toggle>\n      <ion-label>\n        Kekik\n      </ion-label>\n      <ion-avatar item-start>\n        <img src="assets/img/kekik.jpg">\n      </ion-avatar>\n    </ion-item>\n\n    <ion-item>\n      <ion-toggle [(ngModel)]="sandwich.susleme.zeytinyagi"></ion-toggle>\n      <ion-label>\n        Zeytinyağı\n      </ion-label>\n      <ion-avatar item-start>\n        <img src="assets/img/zeytinyagi.jpg">\n      </ion-avatar>\n    </ion-item>\n\n  </ion-list>\n\n  <ion-list>\n\n    <ion-list-header>\n      Sos\n    </ion-list-header>\n\n    <ion-item>\n      <ion-toggle [(ngModel)]="sandwich.sos.zeytinezmesi"></ion-toggle>\n      <ion-label>\n        Zeytin ezmesi\n      </ion-label>\n      <ion-avatar item-start>\n        <img src="assets/img/zeytinezmesi.jpg">\n      </ion-avatar>\n    </ion-item>\n\n    <ion-item>\n      <ion-toggle [(ngModel)]="sandwich.sos.acuka"></ion-toggle>\n      <ion-label>\n        Acuka\n      </ion-label>\n      <ion-avatar item-start>\n        <img src="assets/img/acuka.jpg">\n      </ion-avatar>\n    </ion-item>\n\n  </ion-list>\n\n\n  <ion-fab right bottom style="margin-bottom:13px;">\n    <button ion-fab mini style="width:100px; height: 42px; font-size: 14px;" color="danger">Fiyatı {{sandwich.fiyat}} TL</button>\n  </ion-fab>\n  <ion-item-divider></ion-item-divider>\n  <ion-item big color="primary" (click)="openSaveModal()">\n    <ion-icon name="share-alt" item-start></ion-icon>\n    Sandviç oluştur\n  </ion-item>\n  <ion-item-divider></ion-item-divider>\n\n\n\n</ion-content>\n'/*ion-inline-end:"D:\ro\sandwich\src\pages\createsandwich\createsandwich.html"*/
+        selector: 'page-createsandwich',template:/*ion-inline-start:"D:\ro\sandwich\src\pages\createsandwich\createsandwich.html"*/'\n<ion-header>\n  <ion-navbar>\n    <ion-title>Sandviç oluştur</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="cards-bg">\n\n  <ion-card>\n    <ion-card-header>\n      Ekmek\n    </ion-card-header>\n\n      <div>\n          <img src="assets/img/ekmek.jpg"/>\n      </div>\n\n    <ion-card-content>\n\n      <ion-list>\n        <ion-item>\n          <ion-label>Boyu</ion-label>\n          <ion-select [(ngModel)]="sandwich.ekmekboyu" interface="popover">\n            <ion-option value="tam">Tam</ion-option>\n            <ion-option value="yarim">Yarım</ion-option>\n          </ion-select>\n        </ion-item>\n      </ion-list>\n\n      <ion-list>\n        <ion-item>\n          <ion-label>Tipi</ion-label>\n          <ion-select [(ngModel)]="sandwich.ekmektipi" interface="popover">\n            <ion-option value="tahilli">Tahıllı</ion-option>\n            <ion-option value="beyaz">Beyaz</ion-option>\n          </ion-select>\n        </ion-item>\n      </ion-list>\n\n    </ion-card-content>\n  </ion-card>\n\n\n  <ion-card>\n    <ion-card-header>\n      Peynir\n    </ion-card-header>\n\n    <div>\n      <img src="assets/img/peynir.jpg"/>\n    </div>\n\n\n    <ion-card-content>\n\n      <ion-item-divider></ion-item-divider>\n    <ion-item style="padding-left: 0px; padding-bottom: 0px;">\n        <ion-label>Beyaz peynir</ion-label>\n        <ion-checkbox color="royal" [(ngModel)]="sandwich.peynir.beyaz"></ion-checkbox>\n    </ion-item>\n\n    <ion-row style="margin-top: -12px; padding-right: 0px;">\n    <ion-col style="padding: 0px; margin-left: 24px;">\n      <button ion-button icon-left clear small color="secondary" (click)="sandwich.beyazArtir()">\n        <ion-icon name="ios-add-circle-outline"></ion-icon>\n        <div>Dilim ekle</div>\n      </button>\n    </ion-col>\n    <ion-col style="padding: 0px;">\n      <button ion-button icon-left clear small color="danger">\n        <ion-icon name="ios-remove-outline"></ion-icon>\n        <div>Dilim azalt</div>\n      </button>\n    </ion-col>\n    <ion-col style="padding: 0px;">\n      <button ion-button icon-left clear small (click)="sandwich.beyazAzalt()">\n        <ion-badge item-end>{{sandwich.peynir.beyazdilimsayisi}} dilim</ion-badge>\n      </button>\n    </ion-col>\n\n  </ion-row>\n\n      <ion-item-divider></ion-item-divider>\n\n      <ion-item style="padding-left: 0px; padding-bottom: 0px;">\n        <ion-label>Kaşar peyniri</ion-label>\n        <ion-checkbox color="royal" [(ngModel)]="sandwich.peynir.kasar"></ion-checkbox>\n      </ion-item>\n\n      <ion-row style="margin-top: -12px; padding-right: 0px;">\n        <ion-col style="padding: 0px; margin-left: 24px;">\n          <button ion-button icon-left clear small color="secondary" (click)="sandwich.kasarArtir()">\n            <ion-icon name="ios-add-circle-outline"></ion-icon>\n            <div>Dilim ekle</div>\n          </button>\n        </ion-col>\n        <ion-col style="padding: 0px;">\n          <button ion-button icon-left clear small color="danger" (click)="sandwich.kasarAzalt()">\n            <ion-icon name="ios-remove-outline"></ion-icon>\n            <div>Dilim azalt</div>\n          </button>\n        </ion-col>\n        <ion-col style="padding: 0px;">\n          <button ion-button icon-left clear small>\n            <ion-badge item-end>{{sandwich.peynir.kasardilimsayisi}} dilim</ion-badge>\n          </button>\n        </ion-col>\n\n      </ion-row>\n\n      <ion-item-divider></ion-item-divider>\n\n      <ion-item style="padding-left: 0px; padding-bottom: 0px;">\n        <ion-label>Dil peyniri</ion-label>\n        <ion-checkbox color="royal" [(ngModel)]="sandwich.peynir.dil"></ion-checkbox>\n      </ion-item>\n\n      <ion-row style="margin-top: -12px; padding-right: 0px;">\n        <ion-col style="padding: 0px; margin-left: 24px;">\n          <button ion-button icon-left clear small color="secondary" (click)="sandwich.dilArtir()">\n            <ion-icon name="ios-add-circle-outline"></ion-icon>\n            <div>Dilim ekle</div>\n          </button>\n        </ion-col>\n        <ion-col style="padding: 0px;">\n          <button ion-button icon-left clear small color="danger" (click)="sandwich.dilAzalt()">\n            <ion-icon name="ios-remove-outline"></ion-icon>\n            <div>Dilim azalt</div>\n          </button>\n        </ion-col>\n        <ion-col style="padding: 0px;">\n          <button ion-button icon-left clear small>\n            <ion-badge item-end>{{sandwich.peynir.dildilimsayisi}} dilim</ion-badge>\n          </button>\n        </ion-col>\n\n      </ion-row>\n\n      <ion-item-divider></ion-item-divider>\n\n\n    </ion-card-content>\n  </ion-card>\n\n\n\n  <ion-list no-border>\n\n    <ion-list-header lang="tr">\n      Yeşillik\n    </ion-list-header>\n\n    <ion-item>\n\n      <ion-toggle [(ngModel)]="sandwich.yesillik.domates"></ion-toggle>\n      <ion-label>\n        Domates\n      </ion-label>\n      <ion-avatar item-start>\n        <img src="assets/img/domates.jpg">\n      </ion-avatar>\n    </ion-item>\n\n    <ion-item>\n      <ion-toggle [(ngModel)]="sandwich.yesillik.salatalik"></ion-toggle>\n      <ion-label>\n        Salatalık\n      </ion-label>\n      <ion-avatar item-start>\n        <img src="assets/img/salatalık.jpg">\n      </ion-avatar>\n    </ion-item>\n\n  </ion-list>\n\n\n  <ion-list>\n\n    <ion-list-header>\n      Süsleme\n    </ion-list-header>\n\n    <ion-item>\n      <ion-toggle [(ngModel)]="sandwich.susleme.kekik"></ion-toggle>\n      <ion-label>\n        Kekik\n      </ion-label>\n      <ion-avatar item-start>\n        <img src="assets/img/kekik.jpg">\n      </ion-avatar>\n    </ion-item>\n\n    <ion-item>\n      <ion-toggle [(ngModel)]="sandwich.susleme.zeytinyagi"></ion-toggle>\n      <ion-label>\n        Zeytinyağı\n      </ion-label>\n      <ion-avatar item-start>\n        <img src="assets/img/zeytinyagi.jpg">\n      </ion-avatar>\n    </ion-item>\n\n  </ion-list>\n\n  <ion-list>\n\n    <ion-list-header>\n      Sos\n    </ion-list-header>\n\n    <ion-item>\n      <ion-toggle [(ngModel)]="sandwich.sos.zeytinezmesi"></ion-toggle>\n      <ion-label>\n        Zeytin ezmesi\n      </ion-label>\n      <ion-avatar item-start>\n        <img src="assets/img/zeytinezmesi.jpg">\n      </ion-avatar>\n    </ion-item>\n\n    <ion-item>\n      <ion-toggle [(ngModel)]="sandwich.sos.acuka"></ion-toggle>\n      <ion-label>\n        Acuka\n      </ion-label>\n      <ion-avatar item-start>\n        <img src="assets/img/acuka.jpg">\n      </ion-avatar>\n    </ion-item>\n\n  </ion-list>\n\n\n  <ion-fab right bottom style="margin-bottom:13px;">\n    <button ion-fab mini style="width:100px; height: 42px; font-size: 14px;" color="danger">Fiyatı {{sandwich.fiyat}} TL</button>\n  </ion-fab>\n  <ion-item-divider></ion-item-divider>\n  <ion-item big color="primary" (click)="openSaveModal()">\n    <ion-icon name="share-alt" item-start></ion-icon>\n    Sandviç oluştur\n  </ion-item>\n  <ion-item-divider></ion-item-divider>\n\n\n\n</ion-content>\n'/*ion-inline-end:"D:\ro\sandwich\src\pages\createsandwich\createsandwich.html"*/
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__["c" /* TranslateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__["c" /* TranslateService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* ModalController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _d || Object])
 ], CreateSandwichPage);
@@ -433,14 +423,14 @@ var Sandwich = (function () {
         this.yesillik = {};
         this.susleme = {};
         this.sos = {};
-        this.MAXDILIM = 10;
-        this.SPACE = ' ';
         this.peynir.kasardilimsayisi = 1;
         this.peynir.beyazdilimsayisi = 1;
         this.peynir.dildilimsayisi = 1;
+        this.ekmektipi = 'tahilli';
+        this.ekmekboyu = 'tam';
     }
     Sandwich.prototype.dilArtir = function () {
-        if (this.peynir.dildilimsayisi < this.MAXDILIM)
+        if (this.peynir.dildilimsayisi < this.maxdilim())
             this.peynir.dildilimsayisi++;
     };
     Sandwich.prototype.dilAzalt = function () {
@@ -448,7 +438,7 @@ var Sandwich = (function () {
             this.peynir.dildilimsayisi--;
     };
     Sandwich.prototype.beyazArtir = function () {
-        if (this.peynir.beyazdilimsayisi < this.MAXDILIM)
+        if (this.peynir.beyazdilimsayisi < this.maxdilim())
             this.peynir.beyazdilimsayisi++;
     };
     Sandwich.prototype.beyazAzalt = function () {
@@ -456,33 +446,31 @@ var Sandwich = (function () {
             this.peynir.beyazdilimsayisi--;
     };
     Sandwich.prototype.kasarArtir = function () {
-        if (this.peynir.kasardilimsayisi < this.MAXDILIM)
+        if (this.peynir.kasardilimsayisi < this.maxdilim())
             this.peynir.kasardilimsayisi++;
     };
     Sandwich.prototype.kasarAzalt = function () {
         if (this.peynir.kasardilimsayisi > 1)
             this.peynir.kasardilimsayisi--;
     };
-    Sandwich.prototype.setIcerik = function (translate) {
-        var yarim = translate.get('yarim').subscribe(function (value) {
-            console.log('---> ' + value);
-            return value;
-        });
-        var tahilli = translate.get('tahilli').subscribe(function (value) { console.log('---> ' + value); return value; });
-        var kasar = translate.get('kasar').subscribe(function (value) { console.log('---> ' + value); return value; });
-        var salatalik = translate.get('salatalik').subscribe(function (value) { console.log('---> ' + value); return value; });
-        var zeytinyagi = translate.get('zeytinyagi').subscribe(function (value) { console.log('---> ' + value); return value; });
+    Sandwich.prototype.maxdilim = function () {
+        return 10;
+    };
+    ;
+    Sandwich.prototype.setIcerik = function (labels) {
+        var SPACE = ' ';
         this.icerik =
-            (this.ekmekboyu === 'tam' ? 'Tam' : yarim) + this.SPACE + (this.ekmektipi === 'tahilli' ? tahilli : 'beyaz') + this.SPACE + 'ekmek,' + this.SPACE +
-                (this.peynir ? (this.peynir.beyaz ? this.peynir.beyazdilimsayisi + this.SPACE + 'dilim beyaz peynir,' + this.SPACE : '') : '') +
-                (this.peynir ? (this.peynir.kasar ? this.peynir.kasardilimsayisi + this.SPACE + 'dilim ' + kasar + ' peyniri,' + this.SPACE : '') : '') +
-                (this.peynir ? (this.peynir.dil ? this.peynir.dildilimsayisi + this.SPACE + 'dilim dil peyniri,' + this.SPACE : '') : '') +
-                (this.yesillik ? (this.yesillik.domates ? 'domates,' + this.SPACE : '') : '') +
-                (this.yesillik ? (this.yesillik.salatalik ? salatalik + ',' + this.SPACE : '') : '') +
-                (this.susleme ? (this.susleme.kekik ? 'kekik,' + this.SPACE : '') : '') +
-                (this.susleme ? (this.susleme.zeytinyagi ? zeytinyagi + ',' + this.SPACE : '') : '') +
-                (this.sos ? (this.sos.zeytinezmesi ? 'zeytin ezmesi,' + this.SPACE : '') : '') +
-                (this.sos ? (this.sos.acuka ? 'acuka' + this.SPACE : '') : '');
+            (this.ekmekboyu === 'tam' ? 'Tam' : labels.yarim) + SPACE + (this.ekmektipi === 'tahilli' ? labels.tahilli : 'beyaz') + SPACE + 'ekmek,' + SPACE +
+                (this.peynir ? (this.peynir.beyaz ? this.peynir.beyazdilimsayisi + SPACE + 'dilim beyaz peynir,' + SPACE : '') : '') +
+                (this.peynir ? (this.peynir.kasar ? this.peynir.kasardilimsayisi + SPACE + 'dilim ' + labels.kasar + ' peyniri,' + SPACE : '') : '') +
+                (this.peynir ? (this.peynir.dil ? this.peynir.dildilimsayisi + SPACE + 'dilim dil peyniri,' + SPACE : '') : '') +
+                (this.yesillik ? (this.yesillik.domates ? 'domates,' + SPACE : '') : '') +
+                (this.yesillik ? (this.yesillik.salatalik ? labels.salatalik + ',' + SPACE : '') : '') +
+                (this.susleme ? (this.susleme.kekik ? 'kekik,' + SPACE : '') : '') +
+                (this.susleme ? (this.susleme.zeytinyagi ? labels.zeytinyagi + ',' + SPACE : '') : '') +
+                (this.sos ? (this.sos.zeytinezmesi ? 'zeytin ezmesi,' + SPACE : '') : '') +
+                (this.sos ? (this.sos.acuka ? 'acuka' + SPACE : '') : '');
+        this.icerik = this.icerik && this.icerik.trim().endsWith(',') ? this.icerik.substr(0, this.icerik.lastIndexOf(',')) : this.icerik;
         return this.icerik;
     };
     return Sandwich;
@@ -646,6 +634,27 @@ FirebaseTestPage = __decorate([
 ], FirebaseTestPage);
 
 //# sourceMappingURL=firebasetest.js.map
+
+/***/ }),
+
+/***/ 427:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SandwichLabels; });
+var SandwichLabels = (function () {
+    function SandwichLabels(translate) {
+        var _this = this;
+        translate.get('yarim').subscribe(function (value) { _this.yarim = value; });
+        translate.get('tahilli').subscribe(function (value) { _this.tahilli = value; });
+        translate.get('kasar').subscribe(function (value) { _this.kasar = value; });
+        translate.get('salatalik').subscribe(function (value) { _this.salatalik = value; });
+        translate.get('zeytinyagi').subscribe(function (value) { _this.zeytinyagi = value; });
+    }
+    return SandwichLabels;
+}());
+
+//# sourceMappingURL=SndwichLabels.js.map
 
 /***/ })
 
