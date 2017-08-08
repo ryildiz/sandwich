@@ -21,9 +21,9 @@
       <ion-list>
         <ion-item>
           <ion-label>Boyu</ion-label>
-          <ion-select [(ngModel)]="ekmektipi" interface="popover">
-            <ion-option value="nes">Tam</ion-option>
-            <ion-option value="n64">Yarım</ion-option>
+          <ion-select [(ngModel)]="sandwich.ekmektipi" interface="popover">
+            <ion-option value="tam">Tam</ion-option>
+            <ion-option value="yarim">Yarım</ion-option>
           </ion-select>
         </ion-item>
       </ion-list>
@@ -31,9 +31,9 @@
       <ion-list>
         <ion-item>
           <ion-label>Tipi</ion-label>
-          <ion-select [(ngModel)]="ekmekboyu" interface="popover">
-            <ion-option value="nes">Tahıllı</ion-option>
-            <ion-option value="n64">Beyaz</ion-option>
+          <ion-select [(ngModel)]="sandwich.ekmekboyu" interface="popover">
+            <ion-option value="tahilli">Tahıllı</ion-option>
+            <ion-option value="beyaz">Beyaz</ion-option>
           </ion-select>
         </ion-item>
       </ion-list>
@@ -57,7 +57,7 @@
       <ion-item-divider></ion-item-divider>
     <ion-item style="padding-left: 0px; padding-bottom: 0px;">
         <ion-label>Beyaz peynir</ion-label>
-        <ion-checkbox color="royal"></ion-checkbox>
+        <ion-checkbox color="royal" [(ngModel)]="sandwich.peynir.beyaz"></ion-checkbox>
     </ion-item>
 
     <ion-row style="margin-top: -12px; padding-right: 0px;">
@@ -85,7 +85,7 @@
 
       <ion-item style="padding-left: 0px; padding-bottom: 0px;">
         <ion-label>Kaşar peyniri</ion-label>
-        <ion-checkbox color="royal"></ion-checkbox>
+        <ion-checkbox color="royal" [(ngModel)]="sandwich.peynir.kasar"></ion-checkbox>
       </ion-item>
 
       <ion-row style="margin-top: -12px; padding-right: 0px;">
@@ -113,7 +113,7 @@
 
       <ion-item style="padding-left: 0px; padding-bottom: 0px;">
         <ion-label>Dil peyniri</ion-label>
-        <ion-checkbox color="royal"></ion-checkbox>
+        <ion-checkbox color="royal" [(ngModel)]="sandwich.peynir.dil"></ion-checkbox>
       </ion-item>
 
       <ion-row style="margin-top: -12px; padding-right: 0px;">
@@ -153,7 +153,7 @@
 
     <ion-item>
 
-      <ion-toggle checked="false"></ion-toggle>
+      <ion-toggle [(ngModel)]="sandwich.yesillik.domates"></ion-toggle>
       <ion-label>
         Domates
       </ion-label>
@@ -163,7 +163,7 @@
     </ion-item>
 
     <ion-item>
-      <ion-toggle checked="false"></ion-toggle>
+      <ion-toggle [(ngModel)]="sandwich.yesillik.salatalik"></ion-toggle>
       <ion-label>
         Salatalık
       </ion-label>
@@ -182,7 +182,7 @@
     </ion-list-header>
 
     <ion-item>
-      <ion-toggle checked="true"></ion-toggle>
+      <ion-toggle [(ngModel)]="sandwich.susleme.kekik"></ion-toggle>
       <ion-label>
         Kekik
       </ion-label>
@@ -192,7 +192,7 @@
     </ion-item>
 
     <ion-item>
-      <ion-toggle checked="true"></ion-toggle>
+      <ion-toggle [(ngModel)]="sandwich.susleme.zeytinyagi"></ion-toggle>
       <ion-label>
         Zeytinyağı
       </ion-label>
@@ -210,7 +210,7 @@
     </ion-list-header>
 
     <ion-item>
-      <ion-toggle checked="true"></ion-toggle>
+      <ion-toggle [(ngModel)]="sandwich.sos.zeytinezmesi"></ion-toggle>
       <ion-label>
         Zeytin ezmesi
       </ion-label>
@@ -220,7 +220,7 @@
     </ion-item>
 
     <ion-item>
-      <ion-toggle checked="true"></ion-toggle>
+      <ion-toggle [(ngModel)]="sandwich.sos.acuka"></ion-toggle>
       <ion-label>
         Acuka
       </ion-label>
@@ -233,7 +233,7 @@
 
 
   <ion-fab right bottom style="margin-bottom:13px;">
-    <button ion-fab mini style="width:100px; height: 42px; font-size: 14px;" color="danger">Fiyatı 10 TL</button>
+    <button ion-fab mini style="width:100px; height: 42px; font-size: 14px;" color="danger">Fiyatı {{sandwich.fiyat}} TL</button>
   </ion-fab>
   <ion-item-divider></ion-item-divider>
   <ion-item big color="primary" (click)="openSaveModal()">
