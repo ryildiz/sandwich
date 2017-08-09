@@ -153,7 +153,7 @@
 
     <ion-item>
 
-      <ion-toggle [(ngModel)]="sandwich.yesillik.domates"></ion-toggle>
+      <ion-toggle [(ngModel)]="sandwich.yesillik.domates" (ionChange)="sandwich.updatePrice()" ></ion-toggle>
       <ion-label>
         Domates
       </ion-label>
@@ -163,7 +163,7 @@
     </ion-item>
 
     <ion-item>
-      <ion-toggle [(ngModel)]="sandwich.yesillik.salatalik"></ion-toggle>
+      <ion-toggle [(ngModel)]="sandwich.yesillik.salatalik" (ionChange)="sandwich.updatePrice()"></ion-toggle>
       <ion-label>
         Salatalık
       </ion-label>
@@ -182,7 +182,7 @@
     </ion-list-header>
 
     <ion-item>
-      <ion-toggle [(ngModel)]="sandwich.susleme.kekik"></ion-toggle>
+      <ion-toggle [(ngModel)]="sandwich.susleme.kekik" (ionChange)="sandwich.updatePrice()"></ion-toggle>
       <ion-label>
         Kekik
       </ion-label>
@@ -192,7 +192,7 @@
     </ion-item>
 
     <ion-item>
-      <ion-toggle [(ngModel)]="sandwich.susleme.zeytinyagi"></ion-toggle>
+      <ion-toggle [(ngModel)]="sandwich.susleme.zeytinyagi" (ionChange)="sandwich.updatePrice()"></ion-toggle>
       <ion-label>
         Zeytinyağı
       </ion-label>
@@ -210,7 +210,7 @@
     </ion-list-header>
 
     <ion-item>
-      <ion-toggle [(ngModel)]="sandwich.sos.zeytinezmesi"></ion-toggle>
+      <ion-toggle [(ngModel)]="sandwich.sos.zeytinezmesi" (ionChange)="sandwich.updatePrice()"></ion-toggle>
       <ion-label>
         Zeytin ezmesi
       </ion-label>
@@ -220,7 +220,7 @@
     </ion-item>
 
     <ion-item>
-      <ion-toggle [(ngModel)]="sandwich.sos.acuka"></ion-toggle>
+      <ion-toggle [(ngModel)]="sandwich.sos.acuka" (ionChange)="sandwich.updatePrice()"></ion-toggle>
       <ion-label>
         Acuka
       </ion-label>
@@ -232,7 +232,7 @@
   </ion-list>
 
 
-  <ion-fab right bottom style="margin-bottom:13px;" showWhen="sandwich.fiyat">
+  <ion-fab right bottom style="margin-bottom:13px;" *ngIf="sandwich.fiyat">
     <button ion-fab mini style="width:100px; height: 42px; font-size: 14px;" color="danger">Fiyatı {{sandwich.fiyat}} TL</button>
   </ion-fab>
   <ion-item-divider></ion-item-divider>

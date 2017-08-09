@@ -34,7 +34,7 @@ export class Sandwich {
     fiyat?:number;
 
      updatePrice() {
-        this.sandwichProvider.updatePrice(this);
+         this.sandwichProvider.updatePrice(this);
      }
 
     constructor(private sandwichProvider : SandwichProvider) {
