@@ -1,9 +1,10 @@
- import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 import {ModalController, NavController, NavParams} from 'ionic-angular';
 import {ModalContentPage} from "./modalcontent";
 import {Sandwich} from "../../model/Sandwich";
 import {TranslateService} from "@ngx-translate/core";
  import {SandwichLabels} from "../../model/SndwichLabels";
+import {SandwichProvider} from "../../providers/sandwich-provider";
 
 @Component({
   selector: 'page-createsandwich',
@@ -25,12 +26,16 @@ export class CreateSandwichPage {
    constructor(public navCtrl: NavController,
                private translate: TranslateService,
                public modalCtrl: ModalController,
+               private sandwichProvider : SandwichProvider,
                public navParams: NavParams) {
+
        this.loginData = this.navParams.get("loginData");
 
-       this.sandwich = new Sandwich();
+       this.sandwich = new Sandwich(sandwichProvider);
 
    }
+
+
 
     openSaveModal() {
 

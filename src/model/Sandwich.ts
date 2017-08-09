@@ -1,4 +1,5 @@
 import {SandwichLabels} from "./SndwichLabels";
+import {SandwichProvider} from "../providers/sandwich-provider";
 
 export class Sandwich {
 
@@ -32,8 +33,11 @@ export class Sandwich {
 
     fiyat?:number;
 
+     updatePrice() {
+        this.sandwichProvider.updatePrice(this);
+     }
 
-    constructor() {
+    constructor(private sandwichProvider : SandwichProvider) {
         this.peynir.kasardilimsayisi=1;
         this.peynir.beyazdilimsayisi=1;
         this.peynir.dildilimsayisi=1;
@@ -42,34 +46,47 @@ export class Sandwich {
     }
 
     dilArtir(){
-        if(this.peynir.dildilimsayisi<this.maxdilim())
+        if(this.peynir.dildilimsayisi<this.maxdilim()) {
             this.peynir.dildilimsayisi++;
+            this.updatePrice();
+        }
     }
 
     dilAzalt(){
-        if(this.peynir.dildilimsayisi>1)
+        if(this.peynir.dildilimsayisi>1) {
             this.peynir.dildilimsayisi--;
+            this.updatePrice();
+        }
     }
 
     beyazArtir(){
-        if(this.peynir.beyazdilimsayisi<this.maxdilim())
+        if(this.peynir.beyazdilimsayisi<this.maxdilim()) {
             this.peynir.beyazdilimsayisi++;
+            this.updatePrice();
+        }
     }
 
     beyazAzalt(){
-        if(this.peynir.beyazdilimsayisi>1)
+        if(this.peynir.beyazdilimsayisi>1) {
             this.peynir.beyazdilimsayisi--;
+            this.updatePrice();
+        }
     }
 
     kasarArtir(){
-        if(this.peynir.kasardilimsayisi<this.maxdilim())
+        if(this.peynir.kasardilimsayisi<this.maxdilim()) {
             this.peynir.kasardilimsayisi++;
+            this.updatePrice();
+        }
     }
 
     kasarAzalt(){
-        if(this.peynir.kasardilimsayisi>1)
+        if(this.peynir.kasardilimsayisi>1) {
             this.peynir.kasardilimsayisi--;
+            this.updatePrice();
+        }
     }
+
 
     maxdilim() {
         return 10;

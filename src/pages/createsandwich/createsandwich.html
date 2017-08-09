@@ -21,7 +21,7 @@
       <ion-list>
         <ion-item>
           <ion-label>Boyu</ion-label>
-          <ion-select [(ngModel)]="sandwich.ekmekboyu" interface="popover">
+          <ion-select [(ngModel)]="sandwich.ekmekboyu" (ionChange)="sandwich.updatePrice()" interface="popover">
             <ion-option value="tam">Tam</ion-option>
             <ion-option value="yarim">Yarım</ion-option>
           </ion-select>
@@ -31,7 +31,7 @@
       <ion-list>
         <ion-item>
           <ion-label>Tipi</ion-label>
-          <ion-select [(ngModel)]="sandwich.ekmektipi" interface="popover">
+          <ion-select [(ngModel)]="sandwich.ekmektipi" (ionChange)="sandwich.updatePrice()" interface="popover">
             <ion-option value="tahilli">Tahıllı</ion-option>
             <ion-option value="beyaz">Beyaz</ion-option>
           </ion-select>
@@ -57,7 +57,7 @@
       <ion-item-divider></ion-item-divider>
     <ion-item style="padding-left: 0px; padding-bottom: 0px;">
         <ion-label>Beyaz peynir</ion-label>
-        <ion-checkbox color="royal" [(ngModel)]="sandwich.peynir.beyaz"></ion-checkbox>
+        <ion-checkbox color="royal" [(ngModel)]="sandwich.peynir.beyaz"  (ionChange)="sandwich.updatePrice()"></ion-checkbox>
     </ion-item>
 
     <ion-row style="margin-top: -12px; padding-right: 0px;">
@@ -232,7 +232,7 @@
   </ion-list>
 
 
-  <ion-fab right bottom style="margin-bottom:13px;">
+  <ion-fab right bottom style="margin-bottom:13px;" showWhen="sandwich.fiyat">
     <button ion-fab mini style="width:100px; height: 42px; font-size: 14px;" color="danger">Fiyatı {{sandwich.fiyat}} TL</button>
   </ion-fab>
   <ion-item-divider></ion-item-divider>

@@ -3,5 +3,10 @@
   "tahilli": "tahıllı",
   "kasar": "kaşar",
   "salatalik": "salatalık",
-  "zeytinyagi": "zeytinyağı"
+  "zeytinyagi": "zeytinyağı",
+  "loading": "Lütfen Bekleyiniz...",
+  "errorText": "Hata Oluştu",
+  "infoText": "Bilgi",
+  "ok": "Tamam",
+  "errorDescriptionText": "Üzgünüz şu anda hizmet veremiyoruz."
 }

@@ -19,6 +19,8 @@ import {AngularFireModule} from "angularfire2";
 import {AngularFireDatabaseModule} from "angularfire2/database";
 import {FirebaseTestPage} from "../pages/firebase_test/firebasetest";
 import {HttpModule, Http, RequestOptions, XHRBackend} from "@angular/http";
+import {SandwichProvider} from "../providers/sandwich-provider";
+import {LoadingProvider} from "../providers/loading-provider";
 
 var config = {
     apiKey: "AIzaSyA730uys6aEhWaQjgbiqxxPtovkqg3psgE",
@@ -74,6 +76,8 @@ export function createTranslateLoader(http: Http) {
         SplashScreen,
         GooglePlus,
         Facebook,
+        SandwichProvider,
+        LoadingProvider,
         {provide: ErrorHandler, useClass: IonicErrorHandler},
         {
             provide: Http,
