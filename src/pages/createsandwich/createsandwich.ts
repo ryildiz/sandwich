@@ -5,6 +5,7 @@ import {Sandwich} from "../../model/Sandwich";
 import {TranslateService} from "@ngx-translate/core";
  import {SandwichLabels} from "../../model/SndwichLabels";
 import {SandwichProvider} from "../../providers/sandwich-provider";
+import {SandwichBase} from "../../model/SandwichBase";
 
 @Component({
   selector: 'page-createsandwich',

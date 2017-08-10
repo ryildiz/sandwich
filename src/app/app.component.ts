@@ -17,11 +17,11 @@ import {TranslateService} from "@ngx-translate/core";
 })
 export class MyApp {
 
-    // rootPage:any = TabsPage;
+    rootPage:any = TabsPage;
     // rootPage:any = FirebaseTestPage;
     // rootPage:any = LoginPage;
     // rootPage:any = MySandwichesPage;
-    rootPage:any = CreateSandwichPage;
+    // rootPage:any = CreateSandwichPage;
 
   constructor(platform: Platform,
               private translate: TranslateService,
