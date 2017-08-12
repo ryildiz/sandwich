@@ -1,17 +1,72 @@
 import {SandwichLabels} from "./SndwichLabels";
 import {SandwichProvider} from "../providers/sandwich-provider";
-import {SandwichBase} from "./SandwichBase";
+import {JsonObject, JsonProperty, JsonConvert, OperationMode, ValueCheckingMode} from "json2typescript"
 
-export class Sandwich extends SandwichBase{
+@JsonObject
+export class Sandwich {
 
-    constructor(private sandwichProvider : SandwichProvider) {
-        super();
-        this.peynir.kasardilimsayisi=1;
-        this.peynir.beyazdilimsayisi=1;
-        this.peynir.dildilimsayisi=1;
-        this.ekmektipi='tahilli';
-        this.ekmekboyu='tam';
+    @JsonProperty("name", String)
+    name: string = '';
+
+    @JsonProperty("icerik", String)
+    icerik: string = '';
+
+    @JsonProperty("ekmektipi", String)
+    ekmektipi: string = 'tahilli';
+
+    @JsonProperty("ekmekboyu", String)
+    ekmekboyu: string = 'tam';
+
+
+    @JsonProperty("peynir", Object)
+    peynir: {
+        beyaz: boolean,
+        beyazdilimsayisi: number,
+        kasar: boolean,
+        kasardilimsayisi: number,
+        dil: boolean,
+        dildilimsayisi: number
+    } = {beyaz:false, beyazdilimsayisi:1, kasar:false, kasardilimsayisi:1, dil:false, dildilimsayisi:1};
+
+    @JsonProperty("yesillik", Object)
+    yesillik: {
+        domates: boolean,
+        salatalik: boolean
+    } = {domates:false, salatalik:false};
+
+    @JsonProperty("susleme", Object)
+    susleme: {
+        kekik: boolean,
+        zeytinyagi: boolean
+    } = {kekik:false, zeytinyagi:false};
+
+
+    @JsonProperty("sos", Object)
+    sos: {
+        zeytinezmesi: boolean,
+        acuka: boolean
+    } = {zeytinezmesi:false, acuka:false};
+
+    @JsonProperty("fiyat", Number)
+    fiyat: number;
+
+    public sandwichProvider : SandwichProvider;
+
+    constructor(){
+            // this.peynir.kasardilimsayisi=1;
+            // this.peynir.beyazdilimsayisi=1;
+            // this.peynir.dildilimsayisi=1;
+            // this.ekmektipi='tahilli';
+            // this.ekmekboyu='tam';
     }
+
+    // constructor(private sandwichProvider : SandwichProvider) {
+    //     this.peynir.kasardilimsayisi=1;
+    //     this.peynir.beyazdilimsayisi=1;
+    //     this.peynir.dildilimsayisi=1;
+    //     this.ekmektipi='tahilli';
+    //     this.ekmekboyu='tam';
+    // }
 
     updatePrice() {
         this.sandwichProvider.updatePrice(this);
@@ -64,8 +119,8 @@ export class Sandwich extends SandwichBase{
         return 10;
     };
 
-    getModel() : SandwichBase{
-        let s = new SandwichBase();
+    getModel() : any{
+        let s : any = {};
         s.name= this.name;
         s.icerik=this.icerik;
         s.ekmektipi=this.ekmektipi;

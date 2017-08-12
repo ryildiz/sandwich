@@ -7,7 +7,7 @@ webpackJsonp([0],{
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mysandwich_mysandwiches__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__createsandwich_createsandwich__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__createsandwich_createsandwich__ = __webpack_require__(239);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -77,160 +77,7 @@ MySandwichesPage = __decorate([
 
 /***/ }),
 
-/***/ 154:
-/***/ (function(module, exports) {
-
-function webpackEmptyAsyncContext(req) {
-	return new Promise(function(resolve, reject) { reject(new Error("Cannot find module '" + req + "'.")); });
-}
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 154;
-
-/***/ }),
-
-/***/ 195:
-/***/ (function(module, exports) {
-
-function webpackEmptyAsyncContext(req) {
-	return new Promise(function(resolve, reject) { reject(new Error("Cannot find module '" + req + "'.")); });
-}
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 195;
-
-/***/ }),
-
-/***/ 238:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateSandwichPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modalcontent__ = __webpack_require__(239);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__model_Sandwich__ = __webpack_require__(411);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__model_SndwichLabels__ = __webpack_require__(421);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_sandwich_provider__ = __webpack_require__(282);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-var CreateSandwichPage = (function () {
-    function CreateSandwichPage(navCtrl, translate, modalCtrl, sandwichProvider, navParams) {
-        this.navCtrl = navCtrl;
-        this.translate = translate;
-        this.modalCtrl = modalCtrl;
-        this.sandwichProvider = sandwichProvider;
-        this.navParams = navParams;
-        this.loginData = this.navParams.get("loginData");
-        this.sandwich = new __WEBPACK_IMPORTED_MODULE_3__model_Sandwich__["a" /* Sandwich */](sandwichProvider);
-    }
-    CreateSandwichPage.prototype.openSaveModal = function () {
-        this.sandwich.setIcerik(new __WEBPACK_IMPORTED_MODULE_5__model_SndwichLabels__["a" /* SandwichLabels */](this.translate));
-        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_2__modalcontent__["a" /* ModalContentPage */], { 'sandwich': this.sandwich });
-        modal.present();
-    };
-    return CreateSandwichPage;
-}());
-CreateSandwichPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-createsandwich',template:/*ion-inline-start:"D:\ro\sandwich\src\pages\createsandwich\createsandwich.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Sandviç oluştur</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content class="cards-bg">\n\n  <ion-card>\n    <ion-card-header>\n      Ekmek\n    </ion-card-header>\n\n      <div>\n          <img src="assets/img/ekmek.jpg"/>\n      </div>\n\n    <ion-card-content>\n\n      <ion-list>\n        <ion-item>\n          <ion-label>Boyu</ion-label>\n          <ion-select [(ngModel)]="sandwich.ekmekboyu" (ionChange)="sandwich.updatePrice()" interface="popover">\n            <ion-option value="tam">Tam</ion-option>\n            <ion-option value="yarim">Yarım</ion-option>\n          </ion-select>\n        </ion-item>\n      </ion-list>\n\n      <ion-list>\n        <ion-item>\n          <ion-label>Tipi</ion-label>\n          <ion-select [(ngModel)]="sandwich.ekmektipi" (ionChange)="sandwich.updatePrice()" interface="popover">\n            <ion-option value="tahilli">Tahıllı</ion-option>\n            <ion-option value="beyaz">Beyaz</ion-option>\n          </ion-select>\n        </ion-item>\n      </ion-list>\n\n    </ion-card-content>\n  </ion-card>\n\n\n  <ion-card>\n    <ion-card-header>\n      Peynir\n    </ion-card-header>\n\n    <div>\n      <img src="assets/img/peynir.jpg"/>\n    </div>\n\n\n    <ion-card-content>\n\n      <ion-item-divider></ion-item-divider>\n    <ion-item style="padding-left: 0px; padding-bottom: 0px;">\n        <ion-label>Beyaz peynir</ion-label>\n        <ion-checkbox color="royal" [(ngModel)]="sandwich.peynir.beyaz"  (ionChange)="sandwich.updatePrice()"></ion-checkbox>\n    </ion-item>\n\n    <ion-row style="margin-top: -12px; padding-right: 0px;">\n    <ion-col style="padding: 0px; margin-left: 24px;">\n      <button ion-button icon-left clear small color="secondary" (click)="sandwich.beyazArtir()">\n        <ion-icon name="ios-add-circle-outline"></ion-icon>\n        <div>Dilim ekle</div>\n      </button>\n    </ion-col>\n    <ion-col style="padding: 0px;">\n      <button ion-button icon-left clear small color="danger">\n        <ion-icon name="ios-remove-outline"></ion-icon>\n        <div>Dilim azalt</div>\n      </button>\n    </ion-col>\n    <ion-col style="padding: 0px;">\n      <button ion-button icon-left clear small (click)="sandwich.beyazAzalt()">\n        <ion-badge item-end>{{sandwich.peynir.beyazdilimsayisi}} dilim</ion-badge>\n      </button>\n    </ion-col>\n\n  </ion-row>\n\n      <ion-item-divider></ion-item-divider>\n\n      <ion-item style="padding-left: 0px; padding-bottom: 0px;">\n        <ion-label>Kaşar peyniri</ion-label>\n        <ion-checkbox color="royal" [(ngModel)]="sandwich.peynir.kasar"></ion-checkbox>\n      </ion-item>\n\n      <ion-row style="margin-top: -12px; padding-right: 0px;">\n        <ion-col style="padding: 0px; margin-left: 24px;">\n          <button ion-button icon-left clear small color="secondary" (click)="sandwich.kasarArtir()">\n            <ion-icon name="ios-add-circle-outline"></ion-icon>\n            <div>Dilim ekle</div>\n          </button>\n        </ion-col>\n        <ion-col style="padding: 0px;">\n          <button ion-button icon-left clear small color="danger" (click)="sandwich.kasarAzalt()">\n            <ion-icon name="ios-remove-outline"></ion-icon>\n            <div>Dilim azalt</div>\n          </button>\n        </ion-col>\n        <ion-col style="padding: 0px;">\n          <button ion-button icon-left clear small>\n            <ion-badge item-end>{{sandwich.peynir.kasardilimsayisi}} dilim</ion-badge>\n          </button>\n        </ion-col>\n\n      </ion-row>\n\n      <ion-item-divider></ion-item-divider>\n\n      <ion-item style="padding-left: 0px; padding-bottom: 0px;">\n        <ion-label>Dil peyniri</ion-label>\n        <ion-checkbox color="royal" [(ngModel)]="sandwich.peynir.dil"></ion-checkbox>\n      </ion-item>\n\n      <ion-row style="margin-top: -12px; padding-right: 0px;">\n        <ion-col style="padding: 0px; margin-left: 24px;">\n          <button ion-button icon-left clear small color="secondary" (click)="sandwich.dilArtir()">\n            <ion-icon name="ios-add-circle-outline"></ion-icon>\n            <div>Dilim ekle</div>\n          </button>\n        </ion-col>\n        <ion-col style="padding: 0px;">\n          <button ion-button icon-left clear small color="danger" (click)="sandwich.dilAzalt()">\n            <ion-icon name="ios-remove-outline"></ion-icon>\n            <div>Dilim azalt</div>\n          </button>\n        </ion-col>\n        <ion-col style="padding: 0px;">\n          <button ion-button icon-left clear small>\n            <ion-badge item-end>{{sandwich.peynir.dildilimsayisi}} dilim</ion-badge>\n          </button>\n        </ion-col>\n\n      </ion-row>\n\n      <ion-item-divider></ion-item-divider>\n\n\n    </ion-card-content>\n  </ion-card>\n\n\n\n  <ion-list no-border>\n\n    <ion-list-header lang="tr">\n      Yeşillik\n    </ion-list-header>\n\n    <ion-item>\n\n      <ion-toggle [(ngModel)]="sandwich.yesillik.domates" (ionChange)="sandwich.updatePrice()" ></ion-toggle>\n      <ion-label>\n        Domates\n      </ion-label>\n      <ion-avatar item-start>\n        <img src="assets/img/domates.jpg">\n      </ion-avatar>\n    </ion-item>\n\n    <ion-item>\n      <ion-toggle [(ngModel)]="sandwich.yesillik.salatalik" (ionChange)="sandwich.updatePrice()"></ion-toggle>\n      <ion-label>\n        Salatalık\n      </ion-label>\n      <ion-avatar item-start>\n        <img src="assets/img/salatalık.jpg">\n      </ion-avatar>\n    </ion-item>\n\n  </ion-list>\n\n\n  <ion-list>\n\n    <ion-list-header>\n      Süsleme\n    </ion-list-header>\n\n    <ion-item>\n      <ion-toggle [(ngModel)]="sandwich.susleme.kekik" (ionChange)="sandwich.updatePrice()"></ion-toggle>\n      <ion-label>\n        Kekik\n      </ion-label>\n      <ion-avatar item-start>\n        <img src="assets/img/kekik.jpg">\n      </ion-avatar>\n    </ion-item>\n\n    <ion-item>\n      <ion-toggle [(ngModel)]="sandwich.susleme.zeytinyagi" (ionChange)="sandwich.updatePrice()"></ion-toggle>\n      <ion-label>\n        Zeytinyağı\n      </ion-label>\n      <ion-avatar item-start>\n        <img src="assets/img/zeytinyagi.jpg">\n      </ion-avatar>\n    </ion-item>\n\n  </ion-list>\n\n  <ion-list>\n\n    <ion-list-header>\n      Sos\n    </ion-list-header>\n\n    <ion-item>\n      <ion-toggle [(ngModel)]="sandwich.sos.zeytinezmesi" (ionChange)="sandwich.updatePrice()"></ion-toggle>\n      <ion-label>\n        Zeytin ezmesi\n      </ion-label>\n      <ion-avatar item-start>\n        <img src="assets/img/zeytinezmesi.jpg">\n      </ion-avatar>\n    </ion-item>\n\n    <ion-item>\n      <ion-toggle [(ngModel)]="sandwich.sos.acuka" (ionChange)="sandwich.updatePrice()"></ion-toggle>\n      <ion-label>\n        Acuka\n      </ion-label>\n      <ion-avatar item-start>\n        <img src="assets/img/acuka.jpg">\n      </ion-avatar>\n    </ion-item>\n\n  </ion-list>\n\n\n  <ion-fab right bottom style="margin-bottom:13px;" *ngIf="sandwich.fiyat">\n    <button ion-fab mini style="width:100px; height: 42px; font-size: 14px;" color="danger">Fiyatı {{sandwich.fiyat}} TL</button>\n  </ion-fab>\n  <ion-item-divider></ion-item-divider>\n  <ion-item big color="primary" (click)="openSaveModal()">\n    <ion-icon name="share-alt" item-start></ion-icon>\n    Sandviç oluştur\n  </ion-item>\n  <ion-item-divider></ion-item-divider>\n\n\n\n</ion-content>\n'/*ion-inline-end:"D:\ro\sandwich\src\pages\createsandwich\createsandwich.html"*/
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__["c" /* TranslateService */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */],
-        __WEBPACK_IMPORTED_MODULE_6__providers_sandwich_provider__["a" /* SandwichProvider */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
-], CreateSandwichPage);
-
-//# sourceMappingURL=createsandwich.js.map
-
-/***/ }),
-
-/***/ 239:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalContentPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mysandwich_mysandwiches__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__model_SandwichBase__ = __webpack_require__(412);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var ModalContentPage = (function () {
-    function ModalContentPage(platform, params, fdb, navCtrl, viewCtrl) {
-        this.platform = platform;
-        this.params = params;
-        this.fdb = fdb;
-        this.navCtrl = navCtrl;
-        this.viewCtrl = viewCtrl;
-        this.loginData = {
-            displayName: String,
-            email: String,
-            familyName: String,
-            givenName: String,
-            imageUrl: String,
-            userId: String
-        };
-        this.sandwich = this.params.get('sandwich');
-        this.loginData.userId = Date.now().valueOf();
-    }
-    ModalContentPage.prototype.saveSandwich = function () {
-        debugger;
-        var bb = this.sandwich.getModel();
-        debugger;
-        var xx = new __WEBPACK_IMPORTED_MODULE_4__model_SandwichBase__["a" /* SandwichBase */]();
-        this.fdb.list("/demo/" + this.loginData.userId + "/").push(xx);
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__mysandwich_mysandwiches__["a" /* MySandwichesPage */], {});
-    };
-    ModalContentPage.prototype.dismiss = function () {
-        this.viewCtrl.dismiss();
-    };
-    return ModalContentPage;
-}());
-ModalContentPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
-        selector: 'page-modalcontent',template:/*ion-inline-start:"D:\ro\sandwich\src\pages\createsandwich\modalcontent.html"*/'\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Sandviç Kayıt</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content class="cards-bg">\n\n\n\n  <ion-card>\n\n\n\n    <div>\n\n      <img src="assets/img/sandwich.jpg"/>\n\n    </div>\n\n\n\n    <ion-card-content>\n\n\n\n      <ion-list>\n\n\n\n        <ion-item>\n\n          <ion-input type="text" placeholder="Sandviçinize isim verin ..." [(ngModel)]="sandwich.name"></ion-input>\n\n        </ion-item>\n\n      </ion-list>\n\n\n\n      <ion-label text-wrap>\n\n       İçerik: {{sandwich.icerik}}\n\n      </ion-label>\n\n\n\n\n\n\n\n    </ion-card-content>\n\n\n\n    <ion-item big color="primary" (click)="saveSandwich()">\n\n      <ion-icon name="share-alt" item-start></ion-icon>\n\n      Kaydet\n\n      <ion-badge item-end>{{sandwich.fiyat}} TL</ion-badge>\n\n    </ion-item>\n\n\n\n  </ion-card>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\ro\sandwich\src\pages\createsandwich\modalcontent.html"*/
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["i" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["i" /* Platform */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["g" /* NavController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["j" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["j" /* ViewController */]) === "function" && _e || Object])
-], ModalContentPage);
-
-var _a, _b, _c, _d, _e;
-//# sourceMappingURL=modalcontent.js.map
-
-/***/ }),
-
-/***/ 282:
+/***/ 145:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -268,13 +115,184 @@ SandwichProvider = __decorate([
 
 /***/ }),
 
-/***/ 285:
+/***/ 155:
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	return new Promise(function(resolve, reject) { reject(new Error("Cannot find module '" + req + "'.")); });
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 155;
+
+/***/ }),
+
+/***/ 196:
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	return new Promise(function(resolve, reject) { reject(new Error("Cannot find module '" + req + "'.")); });
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 196;
+
+/***/ }),
+
+/***/ 239:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateSandwichPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modalcontent__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__model_Sandwich__ = __webpack_require__(416);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__model_SndwichLabels__ = __webpack_require__(425);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_sandwich_provider__ = __webpack_require__(145);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var CreateSandwichPage = (function () {
+    function CreateSandwichPage(navCtrl, translate, modalCtrl, sandwichProvider, navParams) {
+        this.navCtrl = navCtrl;
+        this.translate = translate;
+        this.modalCtrl = modalCtrl;
+        this.sandwichProvider = sandwichProvider;
+        this.navParams = navParams;
+        this.loginData = this.navParams.get("loginData");
+        this.sandwich = new __WEBPACK_IMPORTED_MODULE_3__model_Sandwich__["a" /* Sandwich */]();
+        this.sandwich.sandwichProvider = sandwichProvider;
+    }
+    CreateSandwichPage.prototype.openSaveModal = function () {
+        this.sandwich.setIcerik(new __WEBPACK_IMPORTED_MODULE_5__model_SndwichLabels__["a" /* SandwichLabels */](this.translate));
+        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_2__modalcontent__["a" /* ModalContentPage */], { 'sandwich': this.sandwich });
+        modal.present();
+    };
+    return CreateSandwichPage;
+}());
+CreateSandwichPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-createsandwich',template:/*ion-inline-start:"D:\ro\sandwich\src\pages\createsandwich\createsandwich.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Sandviç oluştur</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content class="cards-bg">\n\n  <ion-card>\n    <ion-card-header>\n      Ekmek\n    </ion-card-header>\n\n      <div>\n          <img src="assets/img/ekmek.jpg"/>\n      </div>\n\n    <ion-card-content>\n\n      <ion-list>\n        <ion-item>\n          <ion-label>Boyu</ion-label>\n          <ion-select [(ngModel)]="sandwich.ekmekboyu" (ionChange)="sandwich.updatePrice()" interface="popover">\n            <ion-option value="tam">Tam</ion-option>\n            <ion-option value="yarim">Yarım</ion-option>\n          </ion-select>\n        </ion-item>\n      </ion-list>\n\n      <ion-list>\n        <ion-item>\n          <ion-label>Tipi</ion-label>\n          <ion-select [(ngModel)]="sandwich.ekmektipi" (ionChange)="sandwich.updatePrice()" interface="popover">\n            <ion-option value="tahilli">Tahıllı</ion-option>\n            <ion-option value="beyaz">Beyaz</ion-option>\n          </ion-select>\n        </ion-item>\n      </ion-list>\n\n    </ion-card-content>\n  </ion-card>\n\n\n  <ion-card>\n    <ion-card-header>\n      Peynir\n    </ion-card-header>\n\n    <div>\n      <img src="assets/img/peynir.jpg"/>\n    </div>\n\n\n    <ion-card-content>\n\n      <ion-item-divider></ion-item-divider>\n    <ion-item style="padding-left: 0px; padding-bottom: 0px;">\n        <ion-label>Beyaz peynir</ion-label>\n        <ion-checkbox color="royal" [(ngModel)]="sandwich.peynir.beyaz"  (ionChange)="sandwich.updatePrice()"></ion-checkbox>\n    </ion-item>\n\n    <ion-row style="margin-top: -12px; padding-right: 0px;">\n    <ion-col style="padding: 0px; margin-left: 24px;">\n      <button ion-button icon-left clear small color="secondary" (click)="sandwich.beyazArtir()">\n        <ion-icon name="ios-add-circle-outline"></ion-icon>\n        <div>Dilim ekle</div>\n      </button>\n    </ion-col>\n    <ion-col style="padding: 0px;">\n      <button ion-button icon-left clear small color="danger">\n        <ion-icon name="ios-remove-outline"></ion-icon>\n        <div>Dilim azalt</div>\n      </button>\n    </ion-col>\n    <ion-col style="padding: 0px;">\n      <button ion-button icon-left clear small (click)="sandwich.beyazAzalt()">\n        <ion-badge item-end>{{sandwich.peynir.beyazdilimsayisi}} dilim</ion-badge>\n      </button>\n    </ion-col>\n\n  </ion-row>\n\n      <ion-item-divider></ion-item-divider>\n\n      <ion-item style="padding-left: 0px; padding-bottom: 0px;">\n        <ion-label>Kaşar peyniri</ion-label>\n        <ion-checkbox color="royal" [(ngModel)]="sandwich.peynir.kasar"></ion-checkbox>\n      </ion-item>\n\n      <ion-row style="margin-top: -12px; padding-right: 0px;">\n        <ion-col style="padding: 0px; margin-left: 24px;">\n          <button ion-button icon-left clear small color="secondary" (click)="sandwich.kasarArtir()">\n            <ion-icon name="ios-add-circle-outline"></ion-icon>\n            <div>Dilim ekle</div>\n          </button>\n        </ion-col>\n        <ion-col style="padding: 0px;">\n          <button ion-button icon-left clear small color="danger" (click)="sandwich.kasarAzalt()">\n            <ion-icon name="ios-remove-outline"></ion-icon>\n            <div>Dilim azalt</div>\n          </button>\n        </ion-col>\n        <ion-col style="padding: 0px;">\n          <button ion-button icon-left clear small>\n            <ion-badge item-end>{{sandwich.peynir.kasardilimsayisi}} dilim</ion-badge>\n          </button>\n        </ion-col>\n\n      </ion-row>\n\n      <ion-item-divider></ion-item-divider>\n\n      <ion-item style="padding-left: 0px; padding-bottom: 0px;">\n        <ion-label>Dil peyniri</ion-label>\n        <ion-checkbox color="royal" [(ngModel)]="sandwich.peynir.dil"></ion-checkbox>\n      </ion-item>\n\n      <ion-row style="margin-top: -12px; padding-right: 0px;">\n        <ion-col style="padding: 0px; margin-left: 24px;">\n          <button ion-button icon-left clear small color="secondary" (click)="sandwich.dilArtir()">\n            <ion-icon name="ios-add-circle-outline"></ion-icon>\n            <div>Dilim ekle</div>\n          </button>\n        </ion-col>\n        <ion-col style="padding: 0px;">\n          <button ion-button icon-left clear small color="danger" (click)="sandwich.dilAzalt()">\n            <ion-icon name="ios-remove-outline"></ion-icon>\n            <div>Dilim azalt</div>\n          </button>\n        </ion-col>\n        <ion-col style="padding: 0px;">\n          <button ion-button icon-left clear small>\n            <ion-badge item-end>{{sandwich.peynir.dildilimsayisi}} dilim</ion-badge>\n          </button>\n        </ion-col>\n\n      </ion-row>\n\n      <ion-item-divider></ion-item-divider>\n\n\n    </ion-card-content>\n  </ion-card>\n\n\n\n  <ion-list no-border>\n\n    <ion-list-header lang="tr">\n      Yeşillik\n    </ion-list-header>\n\n    <ion-item>\n\n      <ion-toggle [(ngModel)]="sandwich.yesillik.domates" (ionChange)="sandwich.updatePrice()" ></ion-toggle>\n      <ion-label>\n        Domates\n      </ion-label>\n      <ion-avatar item-start>\n        <img src="assets/img/domates.jpg">\n      </ion-avatar>\n    </ion-item>\n\n    <ion-item>\n      <ion-toggle [(ngModel)]="sandwich.yesillik.salatalik" (ionChange)="sandwich.updatePrice()"></ion-toggle>\n      <ion-label>\n        Salatalık\n      </ion-label>\n      <ion-avatar item-start>\n        <img src="assets/img/salatalık.jpg">\n      </ion-avatar>\n    </ion-item>\n\n  </ion-list>\n\n\n  <ion-list>\n\n    <ion-list-header>\n      Süsleme\n    </ion-list-header>\n\n    <ion-item>\n      <ion-toggle [(ngModel)]="sandwich.susleme.kekik" (ionChange)="sandwich.updatePrice()"></ion-toggle>\n      <ion-label>\n        Kekik\n      </ion-label>\n      <ion-avatar item-start>\n        <img src="assets/img/kekik.jpg">\n      </ion-avatar>\n    </ion-item>\n\n    <ion-item>\n      <ion-toggle [(ngModel)]="sandwich.susleme.zeytinyagi" (ionChange)="sandwich.updatePrice()"></ion-toggle>\n      <ion-label>\n        Zeytinyağı\n      </ion-label>\n      <ion-avatar item-start>\n        <img src="assets/img/zeytinyagi.jpg">\n      </ion-avatar>\n    </ion-item>\n\n  </ion-list>\n\n  <ion-list>\n\n    <ion-list-header>\n      Sos\n    </ion-list-header>\n\n    <ion-item>\n      <ion-toggle [(ngModel)]="sandwich.sos.zeytinezmesi" (ionChange)="sandwich.updatePrice()"></ion-toggle>\n      <ion-label>\n        Zeytin ezmesi\n      </ion-label>\n      <ion-avatar item-start>\n        <img src="assets/img/zeytinezmesi.jpg">\n      </ion-avatar>\n    </ion-item>\n\n    <ion-item>\n      <ion-toggle [(ngModel)]="sandwich.sos.acuka" (ionChange)="sandwich.updatePrice()"></ion-toggle>\n      <ion-label>\n        Acuka\n      </ion-label>\n      <ion-avatar item-start>\n        <img src="assets/img/acuka.jpg">\n      </ion-avatar>\n    </ion-item>\n\n  </ion-list>\n\n\n  <ion-fab right bottom style="margin-bottom:13px;" *ngIf="sandwich.fiyat">\n    <button ion-fab mini style="width:100px; height: 42px; font-size: 14px;" color="danger">Fiyatı {{sandwich.fiyat}} TL</button>\n  </ion-fab>\n  <ion-item-divider></ion-item-divider>\n  <ion-item big color="primary" (click)="openSaveModal()">\n    <ion-icon name="share-alt" item-start></ion-icon>\n    Sandviç oluştur\n  </ion-item>\n  <ion-item-divider></ion-item-divider>\n\n\n\n</ion-content>\n'/*ion-inline-end:"D:\ro\sandwich\src\pages\createsandwich\createsandwich.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__["c" /* TranslateService */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */],
+        __WEBPACK_IMPORTED_MODULE_6__providers_sandwich_provider__["a" /* SandwichProvider */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+], CreateSandwichPage);
+
+//# sourceMappingURL=createsandwich.js.map
+
+/***/ }),
+
+/***/ 240:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalContentPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mysandwich_mysandwiches__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__model_Sandwich__ = __webpack_require__(416);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_json2typescript__ = __webpack_require__(279);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_sandwich_provider__ = __webpack_require__(145);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var ModalContentPage = (function () {
+    function ModalContentPage(platform, params, fdb, navCtrl, sandwichProvider, viewCtrl) {
+        this.platform = platform;
+        this.params = params;
+        this.fdb = fdb;
+        this.navCtrl = navCtrl;
+        this.sandwichProvider = sandwichProvider;
+        this.viewCtrl = viewCtrl;
+        this.loginData = {
+            displayName: String,
+            email: String,
+            familyName: String,
+            givenName: String,
+            imageUrl: String,
+            userId: String
+        };
+        this.sandwich = this.params.get('sandwich');
+        this.loginData.userId = Date.now().valueOf();
+    }
+    ModalContentPage.prototype.saveSandwich = function () {
+        debugger;
+        var jsonConvert = new __WEBPACK_IMPORTED_MODULE_5_json2typescript__["a" /* JsonConvert */]();
+        jsonConvert.operationMode = __WEBPACK_IMPORTED_MODULE_5_json2typescript__["d" /* OperationMode */].LOGGING; // print some debug data
+        jsonConvert.ignorePrimitiveChecks = true; // don't allow assigning number to string etc.
+        jsonConvert.valueCheckingMode = __WEBPACK_IMPORTED_MODULE_5_json2typescript__["e" /* ValueCheckingMode */].ALLOW_NULL; // never allow null
+        var serializedObj = jsonConvert.serialize(this.sandwich);
+        debugger;
+        this.fdb.list("/users/1502547025511/").push(serializedObj);
+        this.fdb.list("/users/1502547025511/", { preserveSnapshot: true })
+            .subscribe(function (snapshots) {
+            snapshots.forEach(function (snapshot) {
+                console.log(snapshot.key, snapshot.val());
+                debugger;
+                var ss = jsonConvert.deserializeObject(snapshot.val(), __WEBPACK_IMPORTED_MODULE_4__model_Sandwich__["a" /* Sandwich */]);
+                debugger;
+            });
+        });
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__mysandwich_mysandwiches__["a" /* MySandwichesPage */], {});
+    };
+    ModalContentPage.prototype.dismiss = function () {
+        this.viewCtrl.dismiss();
+    };
+    return ModalContentPage;
+}());
+ModalContentPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
+        selector: 'page-modalcontent',template:/*ion-inline-start:"D:\ro\sandwich\src\pages\createsandwich\modalcontent.html"*/'\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Sandviç Kayıt</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content class="cards-bg">\n\n\n\n  <ion-card>\n\n\n\n    <div>\n\n      <img src="assets/img/sandwich.jpg"/>\n\n    </div>\n\n\n\n    <ion-card-content>\n\n\n\n      <ion-list>\n\n\n\n        <ion-item>\n\n          <ion-input type="text" placeholder="Sandviçinize isim verin ..." [(ngModel)]="sandwich.name"></ion-input>\n\n        </ion-item>\n\n      </ion-list>\n\n\n\n      <ion-label text-wrap>\n\n       İçerik: {{sandwich.icerik}}\n\n      </ion-label>\n\n\n\n\n\n\n\n    </ion-card-content>\n\n\n\n    <ion-item big color="primary" (click)="saveSandwich()">\n\n      <ion-icon name="share-alt" item-start></ion-icon>\n\n      Kaydet\n\n      <ion-badge item-end>{{sandwich.fiyat}} TL</ion-badge>\n\n    </ion-item>\n\n\n\n  </ion-card>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\ro\sandwich\src\pages\createsandwich\modalcontent.html"*/
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["i" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["i" /* Platform */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["g" /* NavController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_6__providers_sandwich_provider__["a" /* SandwichProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__providers_sandwich_provider__["a" /* SandwichProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["j" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["j" /* ViewController */]) === "function" && _f || Object])
+], ModalContentPage);
+
+var _a, _b, _c, _d, _e, _f;
+//# sourceMappingURL=modalcontent.js.map
+
+/***/ }),
+
+/***/ 288:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(286);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(301);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(304);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -282,7 +300,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 301:
+/***/ 304:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -291,25 +309,25 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(341);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(422);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_sandwich_sandwich__ = __webpack_require__(423);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(344);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(426);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_sandwich_sandwich__ = __webpack_require__(427);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_tabs_tabs__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ngx_translate_core__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ngx_translate_http_loader__ = __webpack_require__(424);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_status_bar__ = __webpack_require__(235);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_splash_screen__ = __webpack_require__(237);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_google_plus__ = __webpack_require__(283);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ngx_translate_http_loader__ = __webpack_require__(428);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_status_bar__ = __webpack_require__(236);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_splash_screen__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_google_plus__ = __webpack_require__(286);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_mysandwich_mysandwiches__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_createsandwich_createsandwich__ = __webpack_require__(238);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_createsandwich_modalcontent__ = __webpack_require__(239);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_facebook__ = __webpack_require__(284);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angularfire2__ = __webpack_require__(426);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_createsandwich_createsandwich__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_createsandwich_modalcontent__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_facebook__ = __webpack_require__(287);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angularfire2__ = __webpack_require__(430);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_angularfire2_database__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_firebase_test_firebasetest__ = __webpack_require__(427);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_http__ = __webpack_require__(428);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__providers_sandwich_provider__ = __webpack_require__(282);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__providers_loading_provider__ = __webpack_require__(429);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_firebase_test_firebasetest__ = __webpack_require__(431);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_http__ = __webpack_require__(432);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__providers_sandwich_provider__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__providers_loading_provider__ = __webpack_require__(433);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -412,15 +430,15 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 341:
+/***/ 344:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(235);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(237);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(236);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(238);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__ = __webpack_require__(82);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -478,35 +496,45 @@ MyApp = __decorate([
 
 /***/ }),
 
-/***/ 411:
+/***/ 416:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Sandwich; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SandwichBase__ = __webpack_require__(412);
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_json2typescript__ = __webpack_require__(279);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 
-var Sandwich = (function (_super) {
-    __extends(Sandwich, _super);
-    function Sandwich(sandwichProvider) {
-        var _this = _super.call(this) || this;
-        _this.sandwichProvider = sandwichProvider;
-        _this.peynir.kasardilimsayisi = 1;
-        _this.peynir.beyazdilimsayisi = 1;
-        _this.peynir.dildilimsayisi = 1;
-        _this.ekmektipi = 'tahilli';
-        _this.ekmekboyu = 'tam';
-        return _this;
+var Sandwich = (function () {
+    function Sandwich() {
+        this.name = '';
+        this.icerik = '';
+        this.ekmektipi = 'tahilli';
+        this.ekmekboyu = 'tam';
+        this.peynir = { beyaz: false, beyazdilimsayisi: 1, kasar: false, kasardilimsayisi: 1, dil: false, dildilimsayisi: 1 };
+        this.yesillik = { domates: false, salatalik: false };
+        this.susleme = { kekik: false, zeytinyagi: false };
+        this.sos = { zeytinezmesi: false, acuka: false };
+        // this.peynir.kasardilimsayisi=1;
+        // this.peynir.beyazdilimsayisi=1;
+        // this.peynir.dildilimsayisi=1;
+        // this.ekmektipi='tahilli';
+        // this.ekmekboyu='tam';
     }
+    // constructor(private sandwichProvider : SandwichProvider) {
+    //     this.peynir.kasardilimsayisi=1;
+    //     this.peynir.beyazdilimsayisi=1;
+    //     this.peynir.dildilimsayisi=1;
+    //     this.ekmektipi='tahilli';
+    //     this.ekmekboyu='tam';
+    // }
     Sandwich.prototype.updatePrice = function () {
         this.sandwichProvider.updatePrice(this);
     };
@@ -558,7 +586,7 @@ var Sandwich = (function (_super) {
     };
     ;
     Sandwich.prototype.getModel = function () {
-        var s = new __WEBPACK_IMPORTED_MODULE_0__SandwichBase__["a" /* SandwichBase */]();
+        var s = {};
         s.name = this.name;
         s.icerik = this.icerik;
         s.ekmektipi = this.ekmektipi;
@@ -600,32 +628,53 @@ var Sandwich = (function (_super) {
     };
     ;
     return Sandwich;
-}(__WEBPACK_IMPORTED_MODULE_0__SandwichBase__["a" /* SandwichBase */]));
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0_json2typescript__["c" /* JsonProperty */])("name", String),
+    __metadata("design:type", String)
+], Sandwich.prototype, "name", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0_json2typescript__["c" /* JsonProperty */])("icerik", String),
+    __metadata("design:type", String)
+], Sandwich.prototype, "icerik", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0_json2typescript__["c" /* JsonProperty */])("ekmektipi", String),
+    __metadata("design:type", String)
+], Sandwich.prototype, "ekmektipi", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0_json2typescript__["c" /* JsonProperty */])("ekmekboyu", String),
+    __metadata("design:type", String)
+], Sandwich.prototype, "ekmekboyu", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0_json2typescript__["c" /* JsonProperty */])("peynir", Object),
+    __metadata("design:type", Object)
+], Sandwich.prototype, "peynir", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0_json2typescript__["c" /* JsonProperty */])("yesillik", Object),
+    __metadata("design:type", Object)
+], Sandwich.prototype, "yesillik", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0_json2typescript__["c" /* JsonProperty */])("susleme", Object),
+    __metadata("design:type", Object)
+], Sandwich.prototype, "susleme", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0_json2typescript__["c" /* JsonProperty */])("sos", Object),
+    __metadata("design:type", Object)
+], Sandwich.prototype, "sos", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0_json2typescript__["c" /* JsonProperty */])("fiyat", Number),
+    __metadata("design:type", Number)
+], Sandwich.prototype, "fiyat", void 0);
+Sandwich = __decorate([
+    __WEBPACK_IMPORTED_MODULE_0_json2typescript__["b" /* JsonObject */],
+    __metadata("design:paramtypes", [])
+], Sandwich);
 
 //# sourceMappingURL=Sandwich.js.map
 
 /***/ }),
 
-/***/ 412:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SandwichBase; });
-var SandwichBase = (function () {
-    function SandwichBase() {
-        this.peynir = {};
-        this.yesillik = {};
-        this.susleme = {};
-        this.sos = {};
-    }
-    return SandwichBase;
-}());
-
-//# sourceMappingURL=SandwichBase.js.map
-
-/***/ }),
-
-/***/ 421:
+/***/ 425:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -646,7 +695,7 @@ var SandwichLabels = (function () {
 
 /***/ }),
 
-/***/ 422:
+/***/ 426:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -654,8 +703,8 @@ var SandwichLabels = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tabs_tabs__ = __webpack_require__(135);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_google_plus__ = __webpack_require__(283);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_facebook__ = __webpack_require__(284);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_google_plus__ = __webpack_require__(286);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_facebook__ = __webpack_require__(287);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -714,7 +763,7 @@ LoginPage = __decorate([
 
 /***/ }),
 
-/***/ 423:
+/***/ 427:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -751,7 +800,7 @@ SandwichPage = __decorate([
 
 /***/ }),
 
-/***/ 427:
+/***/ 431:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -803,7 +852,7 @@ FirebaseTestPage = __decorate([
 
 /***/ }),
 
-/***/ 429:
+/***/ 433:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -897,5 +946,5 @@ LoadingProvider = __decorate([
 
 /***/ })
 
-},[285]);
+},[288]);
 //# sourceMappingURL=main.js.map

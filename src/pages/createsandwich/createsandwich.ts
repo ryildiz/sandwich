@@ -5,7 +5,6 @@ import {Sandwich} from "../../model/Sandwich";
 import {TranslateService} from "@ngx-translate/core";
  import {SandwichLabels} from "../../model/SndwichLabels";
 import {SandwichProvider} from "../../providers/sandwich-provider";
-import {SandwichBase} from "../../model/SandwichBase";
 
 @Component({
   selector: 'page-createsandwich',
@@ -32,7 +31,8 @@ export class CreateSandwichPage {
 
        this.loginData = this.navParams.get("loginData");
 
-       this.sandwich = new Sandwich(sandwichProvider);
+       this.sandwich = new Sandwich();
+       this.sandwich.sandwichProvider = sandwichProvider;
 
    }
 

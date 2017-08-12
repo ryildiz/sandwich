@@ -1,7 +1,6 @@
 import {Injectable} from "@angular/core";
 import {AngularFireDatabase} from "angularfire2/database";
 import {Sandwich} from "../model/Sandwich";
-import {SandwichBase} from "../model/SandwichBase";
 
 @Injectable()
 export class SandwichProvider {
@@ -9,7 +8,7 @@ export class SandwichProvider {
     constructor(private fdb:AngularFireDatabase) {
     }
 
-    updatePrice(sandwich:SandwichBase) {
+    updatePrice(sandwich:Sandwich) {
 
         sandwich.fiyat = Math.round(Math.random() * 100);
         // TODO:
