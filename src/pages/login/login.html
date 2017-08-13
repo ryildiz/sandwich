@@ -6,27 +6,27 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="bgcolor">
 
-    <div style="padding: 1em;">
+    <div style="padding: 1em;" >
 
         <img src="assets/img/logo.jpg"/>
 
         <div>
 
-            <h4>Sandivic</h4>
+            <h4>Sandiviç</h4>
             <p>
-                Sec, Tasarla, Sira bekleme hemen ye!
+                Seç, tasarla, sıra bekleme, hemen ye!
             </p>
 
             <button ion-button block color="danger" (click)="loginUserG()">
-                <ion-icon name="logo-googleplus"></ion-icon>
-                <span style="padding-left: 8px; padding-right: 8px;">Google Login</span>
+                <ion-icon style="font-size:32px;" name="logo-googleplus"></ion-icon>
+                <span class="text-tips">Google Login</span>
             </button>
 
-            <button ion-button block color="primary" (click)="loginUserF()">
-                <ion-icon name="logo-facebook"></ion-icon>
-                <span style="padding-left: 8px; padding-right: 8px;">Facebook Login</span>
+            <button ion-button block style="margin-top:8px; backgroun-color:'#3b5998'" (click)="loginUserF()">
+                <ion-icon style="font-size:32px;" name="logo-facebook"></ion-icon>
+                <span class="text-tips">Facebook Login</span>
             </button>
 
         </div>

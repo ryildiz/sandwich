@@ -25198,3 +25198,9 @@ ion-navbar.toolbar {
     padding-top: calc(16px + 20px);
   }
 }
+
+page-login .text-tips {
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: 18px;
+}

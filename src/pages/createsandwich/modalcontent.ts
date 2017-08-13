@@ -5,6 +5,7 @@ import {MySandwichesPage} from "../mysandwich/mysandwiches";
 import {Sandwich} from "../../model/Sandwich";
 import {JsonConvert, OperationMode, ValueCheckingMode} from "json2typescript";
 import {LoadingProvider} from "../../providers/loading-provider";
+import {TabsPage} from "../tabs/tabs";
 
 
 @Component({
@@ -62,7 +63,7 @@ export class ModalContentPage {
 
         this.loading.dismiss(true);
 
-        this.navCtrl.push(MySandwichesPage, {});
+        this.navCtrl.push(TabsPage, {});
 
     }
 
