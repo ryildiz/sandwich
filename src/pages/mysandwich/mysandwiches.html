@@ -1,10 +1,16 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Sandviçlerim</ion-title>
-  </ion-navbar>
+    <ion-toolbar>
+        <ion-title>Sandviçlerim</ion-title>
+    </ion-toolbar>
+
 </ion-header>
 
 <ion-content class="cards-bg">
+
+    <ion-list>
+
+        <ion-item *ngFor="let sandwich of sandwichList | async">
+
 
     <ion-card>
 
@@ -14,27 +20,27 @@
 
     <ion-card-content>
       <ion-card-title>
-        Dağ Deviren
+          <h2>{{sandwich.val().name}} </h2>
       </ion-card-title>
-      <p>
-        1 dilim dil peyniri, 1 dilim kaşar peyniri, 1 dilim beyaz peynir, 2 dilim salam, 2 dilim jambon, zeytin ezmesi, kekik, zeytin yağı.
+      <p text-wrap>
+          {{sandwich.val().icerik}}
       </p>
     </ion-card-content>
 
     <ion-item big color="primary">
       <ion-icon name="share-alt" item-start></ion-icon>
       Hemen sipariş ver
-      <ion-badge item-end>10TL</ion-badge>
+      <ion-badge item-end>{{sandwich.val().fiyat}}  TL</ion-badge>
     </ion-item>
 
     <ion-row no-padding>
       <ion-col>
-        <button ion-button clear small color="secondary" icon-start>
+        <button ion-button clear small color="secondary" icon-start (click)="edit(sandwich)">
           <ion-icon name='md-create'></ion-icon>
           Düzenle        </button>
       </ion-col>
       <ion-col text-right>
-        <button ion-button clear small color="danger" icon-start>
+        <button ion-button clear small color="danger" icon-start (click)="delete(sandwich)">
           <ion-icon name='trash'></ion-icon>
           Sil
         </button>
@@ -43,5 +49,10 @@
     </ion-row>
 
   </ion-card>
+
+
+        </ion-item>
+    </ion-list>
+
 
 </ion-content>

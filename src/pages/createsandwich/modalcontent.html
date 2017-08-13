@@ -1,11 +1,8 @@
 
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Sandviç Kayıt</ion-title>
-  </ion-navbar>
+  <ion-toolbar>
+    <ion-title>Sandviç kayıt</ion-title>
+  </ion-toolbar>
 </ion-header>
 
 
@@ -26,19 +23,50 @@
         </ion-item>
       </ion-list>
 
+      <ion-item>
       <ion-label text-wrap>
        İçerik: {{sandwich.icerik}}
       </ion-label>
+      </ion-item>
+
+      <ion-row no-padding>
+        <ion-col>
+          <button ion-button round medium color="primary" icon-start (click)="saveSandwich()">
+            <ion-icon name='share-alt'></ion-icon>
+            Kaydet        </button>
+        </ion-col>
+        <ion-col text-right>
+          <button ion-button round medium color="danger" icon-start (click)="dismiss()">
+            <ion-icon name='ios-undo-outline'></ion-icon>
+            İptal
+          </button>
+
+        </ion-col>
+      </ion-row>
+
+      <ion-fab right top *ngIf="sandwich.fiyat">
+        <button ion-fab color="danger" style="width: 86px;">
+          <ion-label>{{sandwich.fiyat}} TL</ion-label>
+        </button>
+      </ion-fab>
 
 
+      <!--<ion-item medium color="primary" (click)="saveSandwich()">-->
+        <!--<ion-icon name="share-alt" item-start></ion-icon>-->
+        <!--Kaydet-->
+        <!--<ion-badge item-end>{{sandwich.fiyat}} TL</ion-badge>-->
+      <!--</ion-item>-->
+
+      <!--<ion-item small color="secondary" (click)="dismiss()">-->
+        <!--<ion-icon name="ios-undo-outline" item-start></ion-icon>-->
+        <!--İptal-->
+      <!--</ion-item>-->
 
     </ion-card-content>
 
-    <ion-item big color="primary" (click)="saveSandwich()">
-      <ion-icon name="share-alt" item-start></ion-icon>
-      Kaydet
-      <ion-badge item-end>{{sandwich.fiyat}} TL</ion-badge>
-    </ion-item>
+
+
+
 
   </ion-card>
 

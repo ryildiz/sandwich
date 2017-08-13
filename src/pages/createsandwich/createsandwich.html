@@ -1,10 +1,7 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
+  <ion-toolbar>
     <ion-title>Sandviç oluştur</ion-title>
-  </ion-navbar>
+  </ion-toolbar>
 </ion-header>
 
 
@@ -213,7 +210,7 @@
     </ion-list-header>
 
     <ion-item>
-      <ion-toggle [(ngModel)]="sandwich.sos.zeytinezmesi" (ionChange)="sandwich.updatePrice()"></ion-toggle>
+      <ion-toggle [(ngModel)]="sandwich.sossos.zeytinezmesi" (ionChange)="sandwich.updatePrice()"></ion-toggle>
       <ion-label>
         Zeytin ezmesi
       </ion-label>
@@ -223,7 +220,7 @@
     </ion-item>
 
     <ion-item>
-      <ion-toggle [(ngModel)]="sandwich.sos.acuka" (ionChange)="sandwich.updatePrice()"></ion-toggle>
+      <ion-toggle [(ngModel)]="sandwich.sossos.acuka" (ionChange)="sandwich.updatePrice()"></ion-toggle>
       <ion-label>
         Acuka
       </ion-label>
@@ -235,16 +232,13 @@
   </ion-list>
 
 
-  <ion-fab right bottom style="margin-bottom:13px;" *ngIf="sandwich.fiyat">
+  <ion-fab right bottom style="margin-bottom:-16px;" *ngIf="sandwich.fiyat">
     <button ion-fab mini style="width:100px; height: 42px; font-size: 14px;" color="danger">Fiyatı {{sandwich.fiyat}} TL</button>
   </ion-fab>
-  <ion-item-divider></ion-item-divider>
   <ion-item big color="primary" (click)="openSaveModal()">
     <ion-icon name="share-alt" item-start></ion-icon>
     Sandviç oluştur
   </ion-item>
-  <ion-item-divider></ion-item-divider>
-
 
 
 </ion-content>

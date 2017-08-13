@@ -1,10 +1,10 @@
 import {NavController, NavParams, Platform, ViewController} from "ionic-angular";
 import {Component} from "@angular/core";
-import {AngularFireDatabase, FirebaseListObservable} from "angularfire2/database";
+import {AngularFireDatabase} from "angularfire2/database";
 import {MySandwichesPage} from "../mysandwich/mysandwiches";
 import {Sandwich} from "../../model/Sandwich";
 import {JsonConvert, OperationMode, ValueCheckingMode} from "json2typescript";
-import {SandwichProvider} from "../../providers/sandwich-provider";
+import {LoadingProvider} from "../../providers/loading-provider";
 
 
 @Component({
@@ -14,6 +14,7 @@ import {SandwichProvider} from "../../providers/sandwich-provider";
 export class ModalContentPage {
 
     sandwich:Sandwich;
+    snapshotkey:any;
 
     loginData: any = {
         displayName: String,
@@ -24,21 +25,24 @@ export class ModalContentPage {
         userId: String
     };
 
+
     constructor(
         public platform: Platform,
         public params: NavParams,
         private fdb : AngularFireDatabase,
         public navCtrl: NavController,
-        private sandwichProvider : SandwichProvider,
+        private loading:LoadingProvider,
         public viewCtrl: ViewController
     ) {
         this.sandwich = this.params.get('sandwich');
+        this.snapshotkey = this.params.get('snapshotkey');
+
         this.loginData.userId = Date.now().valueOf();
     }
 
     saveSandwich(){
 
-        debugger;
+        this.loading.startLoading();
 
         let jsonConvert: JsonConvert = new JsonConvert();
         jsonConvert.operationMode = OperationMode.LOGGING; // print some debug data
@@ -47,48 +51,24 @@ export class ModalContentPage {
 
         let serializedObj: any = jsonConvert.serialize(this.sandwich);
 
-        debugger;
+        try {
+            if(this.snapshotkey)
+                this.fdb.list("/users/1502547025511/").update(this.snapshotkey, serializedObj);
+            else
+                this.fdb.list("/users/1502547025511/").push(serializedObj);
+        } catch(e) {
+            this.loading.dismiss(false);
+        }
 
-         this.fdb.list("/users/1502547025511/").push(serializedObj);
+        this.loading.dismiss(true);
 
-         this.fdb.list("/users/1502547025511/", { preserveSnapshot: true})
-             .subscribe(snapshots=>{
-             snapshots.forEach(snapshot => {
-                 console.log(snapshot.key, snapshot.val());
-                 debugger;
-                 let ss : Sandwich = jsonConvert.deserializeObject(snapshot.val(), Sandwich);
-                 debugger;
-             });
-         });
-
-
-         this.navCtrl.push(MySandwichesPage, {});
+        this.navCtrl.push(MySandwichesPage, {});
 
     }
 
     dismiss() {
         this.viewCtrl.dismiss();
     }
-
-
-    // filter(obj) {
-    //     for (var key in obj) {
-    //         if (obj[key] === undefined) {
-    //             delete obj[key];
-    //             // obj[key]='';
-    //             continue;
-    //         }
-    //         if (obj[key] && typeof obj[key] === "object") {
-    //             this.serializeFilter(obj[key]);
-    //             if (!Object.keys(obj[key]).length) {
-    //                 delete obj[key];
-    //                 // obj[key]='';
-    //             }
-    //         }
-    //     }
-    //     return obj;
-    // }
-
 
 
 }

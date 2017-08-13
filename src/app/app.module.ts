@@ -3,7 +3,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import {MyApp} from './app.component';
 import {LoginPage} from "../pages/login/login";
-import {SandwichPage} from "../pages/sandwich/sandwich";
 import { TabsPage } from "../pages/tabs/tabs";
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -39,7 +38,6 @@ export function createTranslateLoader(http: Http) {
     declarations: [
         MyApp,
         MySandwichesPage,
-        SandwichPage,
         CreateSandwichPage,
         ModalContentPage,
         FirebaseTestPage,
@@ -64,7 +62,6 @@ export function createTranslateLoader(http: Http) {
     entryComponents: [
         MyApp,
         MySandwichesPage,
-        SandwichPage,
         CreateSandwichPage,
         ModalContentPage,
         FirebaseTestPage,

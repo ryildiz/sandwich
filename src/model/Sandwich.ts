@@ -22,10 +22,13 @@ export class Sandwich {
     peynir: {
         beyaz: boolean,
         beyazdilimsayisi: number,
+
         kasar: boolean,
         kasardilimsayisi: number,
+
         dil: boolean,
         dildilimsayisi: number
+
     } = {beyaz:false, beyazdilimsayisi:1, kasar:false, kasardilimsayisi:1, dil:false, dildilimsayisi:1};
 
     @JsonProperty("yesillik", Object)
@@ -34,6 +37,12 @@ export class Sandwich {
         salatalik: boolean
     } = {domates:false, salatalik:false};
 
+    @JsonProperty("sossos", Object)
+    sossos: {
+        zeytinezmesi: boolean,
+        acuka: boolean
+    } = {zeytinezmesi:false, acuka:false};
+
     @JsonProperty("susleme", Object)
     susleme: {
         kekik: boolean,
@@ -41,32 +50,15 @@ export class Sandwich {
     } = {kekik:false, zeytinyagi:false};
 
 
-    @JsonProperty("sos", Object)
-    sos: {
-        zeytinezmesi: boolean,
-        acuka: boolean
-    } = {zeytinezmesi:false, acuka:false};
-
     @JsonProperty("fiyat", Number)
     fiyat: number;
 
     public sandwichProvider : SandwichProvider;
 
     constructor(){
-            // this.peynir.kasardilimsayisi=1;
-            // this.peynir.beyazdilimsayisi=1;
-            // this.peynir.dildilimsayisi=1;
-            // this.ekmektipi='tahilli';
-            // this.ekmekboyu='tam';
+
     }
 
-    // constructor(private sandwichProvider : SandwichProvider) {
-    //     this.peynir.kasardilimsayisi=1;
-    //     this.peynir.beyazdilimsayisi=1;
-    //     this.peynir.dildilimsayisi=1;
-    //     this.ekmektipi='tahilli';
-    //     this.ekmekboyu='tam';
-    // }
 
     updatePrice() {
         this.sandwichProvider.updatePrice(this);
@@ -119,38 +111,6 @@ export class Sandwich {
         return 10;
     };
 
-    getModel() : any{
-        let s : any = {};
-        s.name= this.name;
-        s.icerik=this.icerik;
-        s.ekmektipi=this.ekmektipi;
-        s.ekmekboyu=this.ekmekboyu;
-
-        s.peynir=this.peynir;
-        s.peynir.kasar=this.peynir.kasar;
-        s.peynir.kasardilimsayisi=this.peynir.kasardilimsayisi;
-        s.peynir.beyaz=this.peynir.beyaz;
-        s.peynir.beyazdilimsayisi=this.peynir.beyazdilimsayisi;
-        s.peynir.dil=this.peynir.dil;
-        s.peynir.dildilimsayisi=this.peynir.dildilimsayisi;
-
-        s.yesillik=this.yesillik;
-        s.yesillik.salatalik=this.yesillik.salatalik;
-        s.yesillik.domates=this.yesillik.domates;
-
-        s.susleme=this.susleme;
-        s.susleme.kekik=this.susleme.kekik;
-        s.susleme.zeytinyagi=this.susleme.zeytinyagi;
-
-        s.sos=this.sos;
-        s.sos.acuka=this.sos.acuka;
-        s.sos.zeytinezmesi=this.sos.zeytinezmesi;
-
-        s.fiyat=this.fiyat;
-
-        return s;
-    }
-
     
     setIcerik(labels:SandwichLabels) {
 
@@ -168,8 +128,8 @@ export class Sandwich {
         (this.susleme ? (this.susleme.kekik ? 'kekik,' + SPACE : '') : '') +
         (this.susleme ? (this.susleme.zeytinyagi ? labels.zeytinyagi + ',' + SPACE : '') : '') +
 
-        (this.sos ? (this.sos.zeytinezmesi ? 'zeytin ezmesi,' + SPACE : '') : '') +
-        (this.sos ? (this.sos.acuka ? 'acuka' + SPACE : '') : '');
+        (this.sossos ? (this.sossos.zeytinezmesi ? 'zeytin ezmesi,' + SPACE : '') : '') +
+        (this.sossos ? (this.sossos.acuka ? 'acuka' + SPACE : '') : '');
 
        this.icerik = this.icerik && this.icerik.trim().endsWith(',') ? this.icerik.substr(0, this.icerik.lastIndexOf(',')) : this.icerik;
 
